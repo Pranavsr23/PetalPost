@@ -142,8 +142,8 @@ class _JoinSpaceScreenState extends ConsumerState<JoinSpaceScreen> {
                             borderRadius: BorderRadius.circular(24),
                             gradient: LinearGradient(
                               colors: [
-                                AppColors.primary.withValues(alpha: 0.12),
-                                AppColors.primary.withValues(alpha: 0.2),
+                                AppColors.primary.withOpacity(0.12),
+                                AppColors.primary.withOpacity(0.2),
                               ],
                             ),
                           ),
@@ -162,7 +162,7 @@ class _JoinSpaceScreenState extends ConsumerState<JoinSpaceScreen> {
                                       height: 4,
                                       decoration: BoxDecoration(
                                         color: AppColors.primary
-                                            .withValues(alpha: 0.2),
+                                            .withOpacity(0.2),
                                         borderRadius: BorderRadius.circular(999),
                                       ),
                                     ),
@@ -198,7 +198,7 @@ class _JoinSpaceScreenState extends ConsumerState<JoinSpaceScreen> {
                                   borderRadius: BorderRadius.circular(20),
                                   borderSide: BorderSide(
                                     color:
-                                        AppColors.primary.withValues(alpha: 0.3),
+                                        AppColors.primary.withOpacity(0.3),
                                     width: 2,
                                   ),
                                 ),
@@ -206,7 +206,7 @@ class _JoinSpaceScreenState extends ConsumerState<JoinSpaceScreen> {
                                   borderRadius: BorderRadius.circular(20),
                                   borderSide: BorderSide(
                                     color:
-                                        AppColors.primary.withValues(alpha: 0.3),
+                                        AppColors.primary.withOpacity(0.3),
                                     width: 2,
                                   ),
                                 ),
@@ -229,7 +229,7 @@ class _JoinSpaceScreenState extends ConsumerState<JoinSpaceScreen> {
                                 label: const Text("Paste"),
                                 style: TextButton.styleFrom(
                                   backgroundColor:
-                                      AppColors.primary.withValues(alpha: 0.1),
+                                      AppColors.primary.withOpacity(0.1),
                                   foregroundColor: AppColors.primary,
                                   padding:
                                       const EdgeInsets.symmetric(horizontal: 12),

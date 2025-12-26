@@ -34,7 +34,7 @@ class NoteTimelineItem extends StatelessWidget {
           border: Border.all(color: AppColors.softStroke),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.03),
+              color: Colors.black.withOpacity(0.03),
               blurRadius: 12,
               offset: const Offset(0, 6),
             ),
@@ -172,9 +172,9 @@ class NoteTimelineItem extends StatelessWidget {
     if (locked) return const Color(0xFFF2ECEE);
     switch (type) {
       case NoteType.voice:
-        return AppColors.primary.withValues(alpha: 0.12);
+        return AppColors.primary.withOpacity(0.12);
       case NoteType.handwriting:
-        return AppColors.primary.withValues(alpha: 0.12);
+        return AppColors.primary.withOpacity(0.12);
       case NoteType.text:
         return const Color(0xFFFFEEF2);
     }

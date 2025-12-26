@@ -348,7 +348,7 @@ class _RewardShopCard extends StatelessWidget {
         border: Border.all(color: AppColors.softStroke),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.04),
+            color: Colors.black.withOpacity(0.04),
             blurRadius: 12,
             offset: const Offset(0, 6),
           ),
@@ -390,7 +390,7 @@ class _RewardShopCard extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: item.purchased
                         ? AppColors.softStroke
-                        : AppColors.primary.withValues(alpha: 0.1),
+                        : AppColors.primary.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Row(

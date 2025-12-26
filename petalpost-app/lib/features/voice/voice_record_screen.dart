@@ -271,7 +271,7 @@ class _ReadyState extends StatelessWidget {
                 boxShadow: [
                   BoxShadow(
                     color:
-                        _VoiceRecordScreenState._primary.withValues(alpha: 0.3),
+                        _VoiceRecordScreenState._primary.withOpacity(0.3),
                     blurRadius: 20,
                     offset: const Offset(0, 10),
                   ),
@@ -375,7 +375,7 @@ class _RecordingState extends StatelessWidget {
                   shape: BoxShape.circle,
                   border: Border.all(
                     color:
-                        _VoiceRecordScreenState._primary.withValues(alpha: 0.2),
+                        _VoiceRecordScreenState._primary.withOpacity(0.2),
                   ),
                 ),
                 child: Center(
@@ -447,7 +447,7 @@ class _PreviewState extends StatelessWidget {
               borderRadius: BorderRadius.circular(28),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.06),
+                  color: Colors.black.withOpacity(0.06),
                   blurRadius: 16,
                   offset: const Offset(0, 8),
                 ),

@@ -106,7 +106,7 @@ class _MemoriesScreenState extends ConsumerState<MemoriesScreen> {
                   border: Border.all(color: AppColors.softStroke),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.03),
+                      color: Colors.black.withOpacity(0.03),
                       blurRadius: 10,
                       offset: const Offset(0, 4),
                     ),
@@ -336,7 +336,7 @@ class _MemoryCard extends StatelessWidget {
           border: Border.all(color: AppColors.softStroke),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.04),
+              color: Colors.black.withOpacity(0.04),
               blurRadius: 10,
               offset: const Offset(0, 6),
             ),
@@ -360,7 +360,7 @@ class _MemoryCard extends StatelessWidget {
                         width: 28,
                         height: 28,
                         decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.9),
+                          color: Colors.white.withOpacity(0.9),
                           shape: BoxShape.circle,
                         ),
                         child: const Icon(
@@ -452,7 +452,7 @@ class _MemoryPreview extends StatelessWidget {
                 child: Image.network(
                   imageUrl,
                   fit: BoxFit.cover,
-                  color: Colors.black.withValues(alpha: 0.25),
+                  color: Colors.black.withOpacity(0.25),
                   colorBlendMode: BlendMode.darken,
                   errorBuilder: (context, error, stackTrace) => Container(
                     color: const Color(0xFFEAE6E8),
@@ -466,7 +466,7 @@ class _MemoryPreview extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.3),
+                      color: Colors.white.withOpacity(0.3),
                       shape: BoxShape.circle,
                     ),
                     child: const Icon(Icons.lock, color: Colors.white, size: 22),
@@ -476,7 +476,7 @@ class _MemoryPreview extends StatelessWidget {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
-                      color: Colors.black.withValues(alpha: 0.4),
+                      color: Colors.black.withOpacity(0.4),
                       borderRadius: BorderRadius.circular(999),
                     ),
                     child: Text(
@@ -522,7 +522,7 @@ class _MemoryPreview extends StatelessWidget {
       return Stack(
         children: [
           Container(
-            color: AppColors.primary.withValues(alpha: 0.08),
+            color: AppColors.primary.withOpacity(0.08),
             child: Center(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -537,7 +537,7 @@ class _MemoryPreview extends StatelessWidget {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                     decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.85),
+                      color: Colors.white.withOpacity(0.85),
                       borderRadius: BorderRadius.circular(999),
                     ),
                     child: Text(
@@ -560,7 +560,7 @@ class _MemoryPreview extends StatelessWidget {
               width: 26,
               height: 26,
               decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.9),
+                color: Colors.white.withOpacity(0.9),
                 shape: BoxShape.circle,
               ),
               child: const Icon(Icons.mic, color: AppColors.primary, size: 14),

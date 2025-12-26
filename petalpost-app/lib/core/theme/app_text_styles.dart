@@ -46,7 +46,7 @@ class AppTextStyles {
       bodySmall: GoogleFonts.plusJakartaSans(
         fontSize: 12,
         fontWeight: FontWeight.w500,
-        color: scheme.onSurface.withValues(alpha: 0.72),
+        color: scheme.onSurface.withOpacity(0.72),
         height: 1.35,
       ),
       labelLarge: GoogleFonts.plusJakartaSans(
@@ -62,7 +62,7 @@ class AppTextStyles {
       labelSmall: GoogleFonts.plusJakartaSans(
         fontSize: 11,
         fontWeight: FontWeight.w600,
-        color: scheme.onSurface.withValues(alpha: 0.8),
+        color: scheme.onSurface.withOpacity(0.8),
       ),
     );
   }

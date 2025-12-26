@@ -79,20 +79,20 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
           Positioned.fill(
             child: CustomPaint(
               painter: _DotPatternPainter(
-                  color: AppColors.primary.withValues(alpha: 0.08)),
+                  color: AppColors.primary.withOpacity(0.08)),
             ),
           ),
           Positioned(
             top: -80,
             right: -80,
             child: _BlurBlob(
-                color: AppColors.primary.withValues(alpha: 0.12), size: 220),
+                color: AppColors.primary.withOpacity(0.12), size: 220),
           ),
           Positioned(
             bottom: -60,
             left: -80,
             child: _BlurBlob(
-                color: AppColors.primary.withValues(alpha: 0.08), size: 260),
+                color: AppColors.primary.withOpacity(0.08), size: 260),
           ),
           SafeArea(
             child: Padding(
@@ -108,7 +108,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                         onPressed: () => Navigator.of(context).maybePop(),
                         icon: const Icon(Icons.arrow_back),
                         style: IconButton.styleFrom(
-                          backgroundColor: Colors.white.withValues(alpha: 0.7),
+                          backgroundColor: Colors.white.withOpacity(0.7),
                         ),
                       ),
                     ),
@@ -123,7 +123,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: [
                               BoxShadow(
-                                color: AppColors.primary.withValues(alpha: 0.25),
+                                color: AppColors.primary.withOpacity(0.25),
                                 blurRadius: 16,
                                 offset: const Offset(0, 10),
                               ),

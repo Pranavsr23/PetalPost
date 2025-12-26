@@ -107,7 +107,7 @@ class _CreateSpaceScreenState extends ConsumerState<CreateSpaceScreen> {
               top: 40,
               right: -60,
               child: _DecorBlob(
-                color: AppColors.primary.withValues(alpha: 0.08),
+                color: AppColors.primary.withOpacity(0.08),
                 size: 180,
               ),
             ),
@@ -115,7 +115,7 @@ class _CreateSpaceScreenState extends ConsumerState<CreateSpaceScreen> {
               bottom: 60,
               left: -60,
               child: _DecorBlob(
-                color: const Color(0xFFBFA4FF).withValues(alpha: 0.08),
+                color: const Color(0xFFBFA4FF).withOpacity(0.08),
                 size: 140,
               ),
             ),
@@ -213,7 +213,7 @@ class _CreateSpaceScreenState extends ConsumerState<CreateSpaceScreen> {
                                         boxShadow: isSelected
                                             ? [
                                                 BoxShadow(
-                                                  color: AppColors.primary.withValues(alpha: 0.2),
+                                                  color: AppColors.primary.withOpacity(0.2),
                                                   blurRadius: 12,
                                                   spreadRadius: 2,
                                                 ),

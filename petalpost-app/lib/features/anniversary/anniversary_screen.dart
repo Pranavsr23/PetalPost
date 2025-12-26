@@ -139,10 +139,10 @@ class _HeroDays extends StatelessWidget {
               height: 120,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: AppColors.primary.withValues(alpha: 0.12),
+                color: AppColors.primary.withOpacity(0.12),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.primary.withValues(alpha: 0.2),
+                    color: AppColors.primary.withOpacity(0.2),
                     blurRadius: 40,
                     spreadRadius: 4,
                   ),
@@ -175,7 +175,7 @@ class _HeroDays extends StatelessWidget {
           label: const Text("Edit Date"),
           style: OutlinedButton.styleFrom(
             foregroundColor: AppColors.primary,
-            side: BorderSide(color: AppColors.primary.withValues(alpha: 0.2)),
+            side: BorderSide(color: AppColors.primary.withOpacity(0.2)),
             shape: const StadiumBorder(),
           ),
         ),
@@ -204,12 +204,12 @@ class _MilestoneCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.04),
+            color: Colors.black.withOpacity(0.04),
             blurRadius: 16,
             offset: const Offset(0, 8),
           ),
         ],
-        border: Border.all(color: Colors.white.withValues(alpha: 0.6)),
+        border: Border.all(color: Colors.white.withOpacity(0.6)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -307,7 +307,7 @@ class _WidgetSection extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               decoration: BoxDecoration(
-                color: AppColors.primary.withValues(alpha: 0.12),
+                color: AppColors.primary.withOpacity(0.12),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Text(
@@ -518,7 +518,7 @@ class _WidgetPreviewCard extends StatelessWidget {
         border: Border.all(color: AppColors.softStroke),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
+            color: Colors.black.withOpacity(0.05),
             blurRadius: 12,
             offset: const Offset(0, 6),
           ),
@@ -533,7 +533,7 @@ class _WidgetPreviewCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(24),
                 gradient: LinearGradient(
                   colors: [
-                    AppColors.primary.withValues(alpha: 0.05),
+                    AppColors.primary.withOpacity(0.05),
                     Colors.transparent,
                   ],
                   begin: Alignment.topLeft,
@@ -578,7 +578,7 @@ class _WidgetPreviewCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primary.withValues(alpha: 0.25),
+            color: AppColors.primary.withOpacity(0.25),
             blurRadius: 16,
             offset: const Offset(0, 8),
           ),
@@ -594,7 +594,7 @@ class _WidgetPreviewCard extends StatelessWidget {
               width: 80,
               height: 80,
               decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.12),
+                color: Colors.white.withOpacity(0.12),
                 shape: BoxShape.circle,
               ),
             ),
@@ -606,7 +606,7 @@ class _WidgetPreviewCard extends StatelessWidget {
               width: 60,
               height: 60,
               decoration: BoxDecoration(
-                color: Colors.black.withValues(alpha: 0.08),
+                color: Colors.black.withOpacity(0.08),
                 shape: BoxShape.circle,
               ),
             ),

@@ -225,7 +225,7 @@ class _OnboardingArtwork extends StatelessWidget {
                 gradient: LinearGradient(
                   colors: [
                     Colors.transparent,
-                    Colors.white.withValues(alpha: 0.8),
+                    Colors.white.withOpacity(0.8),
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,

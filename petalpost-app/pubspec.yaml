@@ -48,6 +48,10 @@ dev_dependencies:
   fake_cloud_firestore: ^3.0.2
   riverpod_test: ^0.1.5
 
+dependency_overrides:
+  record_linux:
+    path: packages/record_linux
+
 flutter:
   uses-material-design: true
   assets:

@@ -315,14 +315,14 @@ class _ToolButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         decoration: BoxDecoration(
           color: isActive
-              ? AppColors.primary.withValues(alpha: 0.12)
+              ? AppColors.primary.withOpacity(0.12)
               : AppColors.backgroundLight,
           borderRadius: BorderRadius.circular(999),
           border: Border.all(color: AppColors.softStroke),
           boxShadow: isActive
               ? [
                   BoxShadow(
-                    color: AppColors.primary.withValues(alpha: 0.2),
+                    color: AppColors.primary.withOpacity(0.2),
                     blurRadius: 12,
                     offset: const Offset(0, 6),
                   ),
@@ -353,7 +353,7 @@ class _PaperTexturePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Colors.black.withValues(alpha: 0.03)
+      ..color = Colors.black.withOpacity(0.03)
       ..strokeWidth = 1;
     const step = 18.0;
     for (double y = 0; y < size.height; y += step) {

@@ -124,7 +124,7 @@ class _LoveJarScreenState extends ConsumerState<LoveJarScreen> {
                                   horizontal: 8, vertical: 4),
                               decoration: BoxDecoration(
                                 color:
-                                    AppColors.primary.withValues(alpha: 0.12),
+                                    AppColors.primary.withOpacity(0.12),
                                 borderRadius: BorderRadius.circular(999),
                               ),
                               child: Text(
@@ -238,16 +238,16 @@ class _JarCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(40),
           gradient: LinearGradient(
             colors: [
-              Colors.white.withValues(alpha: 0.7),
-              Colors.white.withValues(alpha: 0.2)
+              Colors.white.withOpacity(0.7),
+              Colors.white.withOpacity(0.2)
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
-          border: Border.all(color: Colors.white.withValues(alpha: 0.5)),
+          border: Border.all(color: Colors.white.withOpacity(0.5)),
           boxShadow: [
             BoxShadow(
-              color: AppColors.primary.withValues(alpha: 0.2),
+              color: AppColors.primary.withOpacity(0.2),
               blurRadius: 60,
               offset: const Offset(0, 20),
             ),
@@ -255,7 +255,7 @@ class _JarCard extends StatelessWidget {
         ),
         child: Center(
           child: Icon(Icons.local_florist,
-              size: 120, color: AppColors.primary.withValues(alpha: 0.6)),
+              size: 120, color: AppColors.primary.withOpacity(0.6)),
         ),
       ),
     );

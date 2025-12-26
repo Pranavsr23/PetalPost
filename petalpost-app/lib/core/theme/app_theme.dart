@@ -26,7 +26,7 @@ class AppTheme {
         foregroundColor: AppColors.ink,
         titleTextStyle: AppTextStyles.textTheme(colorScheme).titleLarge,
       ),
-      cardTheme: const CardThemeData(
+      cardTheme: const CardTheme(
         color: AppColors.surfaceLight,
         elevation: 0,
         shape: RoundedRectangleBorder(
@@ -36,7 +36,7 @@ class AppTheme {
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: AppColors.surfaceLight,
-        hintStyle: TextStyle(color: AppColors.ink.withValues(alpha: 0.5)),
+        hintStyle: TextStyle(color: AppColors.ink.withOpacity(0.5)),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(24),
           borderSide: const BorderSide(color: AppColors.softStroke),
@@ -85,7 +85,7 @@ class AppTheme {
         foregroundColor: Colors.white,
         titleTextStyle: AppTextStyles.textTheme(colorScheme).titleLarge,
       ),
-      cardTheme: const CardThemeData(
+      cardTheme: const CardTheme(
         color: AppColors.surfaceDark,
         elevation: 0,
         shape: RoundedRectangleBorder(
@@ -95,7 +95,7 @@ class AppTheme {
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: AppColors.surfaceDark,
-        hintStyle: TextStyle(color: Colors.white.withValues(alpha: 0.5)),
+        hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(24),
           borderSide: const BorderSide(color: AppColors.surfaceDark),

@@ -136,7 +136,7 @@ class _InvitePartnerScreenState extends ConsumerState<InvitePartnerScreen>
                               boxShadow: [
                                 BoxShadow(
                                   color:
-                                      AppColors.primary.withValues(alpha: 0.12),
+                                      AppColors.primary.withOpacity(0.12),
                                   blurRadius: 24,
                                   offset: const Offset(0, 12),
                                 ),

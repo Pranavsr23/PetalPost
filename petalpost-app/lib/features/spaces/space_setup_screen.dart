@@ -32,7 +32,7 @@ class SpaceSetupScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        AppColors.primary.withValues(alpha: 0.05),
+                        AppColors.primary.withOpacity(0.05),
                         Colors.transparent,
                       ],
                       begin: Alignment.bottomCenter,
@@ -147,10 +147,10 @@ class _SpaceActionCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: AppColors.primary.withValues(alpha: 0.12)),
+          border: Border.all(color: AppColors.primary.withOpacity(0.12)),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.04),
+              color: Colors.black.withOpacity(0.04),
               blurRadius: 18,
               offset: const Offset(0, 8),
             ),
@@ -163,7 +163,7 @@ class _SpaceActionCard extends StatelessWidget {
               height: 56,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: AppColors.primary.withValues(alpha: 0.12),
+                color: AppColors.primary.withOpacity(0.12),
               ),
               child: Icon(icon, color: AppColors.primary, size: 28),
             ),
@@ -184,7 +184,7 @@ class _SpaceActionCard extends StatelessWidget {
                 ],
               ),
             ),
-            Icon(Icons.chevron_right, color: AppColors.primary.withValues(alpha: 0.3)),
+            Icon(Icons.chevron_right, color: AppColors.primary.withOpacity(0.3)),
           ],
         ),
       ),

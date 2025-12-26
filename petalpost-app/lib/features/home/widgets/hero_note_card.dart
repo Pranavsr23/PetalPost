@@ -35,7 +35,7 @@ class HeroNoteCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(32),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withValues(alpha: 0.04),
+                color: Colors.black.withOpacity(0.04),
                 blurRadius: 20,
                 offset: const Offset(0, 8),
               ),
@@ -53,13 +53,13 @@ class HeroNoteCard extends StatelessWidget {
                     children: [
                       _HeroBackground(note: note),
                       Container(
-                        color: Colors.black.withValues(alpha: 0.16),
+                        color: Colors.black.withOpacity(0.16),
                       ),
                       if (note.surprise)
                         BackdropFilter(
                           filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
                           child: Container(
-                            color: Colors.white.withValues(alpha: 0.2),
+                            color: Colors.white.withOpacity(0.2),
                           ),
                         ),
                       Center(
@@ -70,9 +70,9 @@ class HeroNoteCard extends StatelessWidget {
                               padding: const EdgeInsets.all(14),
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: Colors.white.withValues(alpha: 0.2),
+                                color: Colors.white.withOpacity(0.2),
                                 border: Border.all(
-                                  color: Colors.white.withValues(alpha: 0.35),
+                                  color: Colors.white.withOpacity(0.35),
                                 ),
                               ),
                               child: Icon(
