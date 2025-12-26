@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_bg_latest"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/latest_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From Alex"
+        android:textStyle="bold"
+        android:textSize="10sp"
+        android:textColor="#9A4C5F" />
+
+    <TextView
+        android:id="@+id/latest_preview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:text="Tap to reveal"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="#221015" />
+
+    <TextView
+        android:id="@+id/latest_meta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="New"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:textColor="#9A4C5F" />
+
+    <TextView
+        android:id="@+id/latest_sender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="From Alex" />
+
+    <TextView
+        android:id="@+id/latest_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="Tap to reveal" />
+
+    <View
+        android:id="@+id/unread_dot"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_alignParentEnd="true"
+        android:background="#EE2B5B"
+        android:layout_marginEnd="2dp"
+        android:layout_marginTop="2dp" />
+</RelativeLayout>

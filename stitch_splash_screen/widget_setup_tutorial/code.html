@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Widget Setup Tutorial</title>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#361d24",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "2.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="relative flex h-full min-h-screen w-full flex-col bg-background-light dark:bg-background-dark text-[#1b0d11] dark:text-white font-display overflow-x-hidden antialiased transition-colors duration-300">
+<!-- Top App Bar -->
+<div class="flex items-center p-4 pb-2 justify-between z-10">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-black dark:text-white">
+<span class="material-symbols-outlined !text-[28px]">close</span>
+</button>
+<!-- Optional: Help icon or empty div for balance -->
+<div class="w-10"></div>
+</div>
+<!-- Main Content Container -->
+<div class="flex-1 flex flex-col w-full max-w-md mx-auto">
+<!-- Header Text -->
+<div class="flex flex-col items-center px-6 pt-2 pb-4 text-center">
+<h1 class="text-[#1b0d11] dark:text-white tracking-tight text-[32px] font-extrabold leading-tight mb-2">
+                Add the widget
+            </h1>
+<p class="text-[#9a4c5f] dark:text-[#f3a6b5] text-base font-medium leading-normal max-w-[280px]">
+                Keep your partner's notes just a glance away.
+            </p>
+</div>
+<!-- Platform Toggle -->
+<div class="flex px-6 py-2 justify-center w-full">
+<div class="flex h-12 w-full max-w-[240px] items-center justify-center rounded-full bg-[#f3e7ea] dark:bg-surface-dark p-1">
+<label class="group relative flex cursor-pointer h-full flex-1 items-center justify-center overflow-hidden rounded-full">
+<input checked="" class="peer invisible w-0 h-0 absolute" name="platform-toggle" type="radio" value="iOS"/>
+<span class="z-10 text-sm font-bold transition-colors duration-200 text-[#9a4c5f] dark:text-[#eebbca] peer-checked:text-[#1b0d11] dark:peer-checked:text-[#1b0d11]">iOS</span>
+<div class="absolute inset-0 hidden peer-checked:block bg-white shadow-sm rounded-full m-[2px] transition-all"></div>
+</label>
+<label class="group relative flex cursor-pointer h-full flex-1 items-center justify-center overflow-hidden rounded-full">
+<input class="peer invisible w-0 h-0 absolute" name="platform-toggle" type="radio" value="Android"/>
+<span class="z-10 text-sm font-bold transition-colors duration-200 text-[#9a4c5f] dark:text-[#eebbca] peer-checked:text-[#1b0d11] dark:peer-checked:text-[#1b0d11]">Android</span>
+<div class="absolute inset-0 hidden peer-checked:block bg-white shadow-sm rounded-full m-[2px] transition-all"></div>
+</label>
+</div>
+</div>
+<!-- Carousel / Step Cards -->
+<div class="mt-6 w-full flex-1 flex flex-col justify-center min-h-[360px]">
+<div class="flex overflow-x-auto no-scrollbar snap-x snap-mandatory px-6 gap-4 pb-4 items-stretch">
+<!-- Card 1 -->
+<div class="snap-center shrink-0 flex w-[280px] flex-col gap-4 rounded-2xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-gray-100 dark:border-white/5 transition-transform">
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-[#4a2e36] dark:to-[#221015] flex items-center justify-center" data-alt="Abstract phone screen illustration showing apps jiggling">
+<div class="bg-white/80 dark:bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg">
+<span class="material-symbols-outlined text-4xl text-primary animate-pulse">touch_app</span>
+</div>
+</div>
+<div class="flex gap-3 items-start">
+<div class="flex items-center justify-center size-8 rounded-full bg-primary/10 dark:bg-primary/20 text-primary font-bold shrink-0 text-sm">1</div>
+<div>
+<p class="text-[#1b0d11] dark:text-white text-lg font-bold leading-tight">Long press screen</p>
+<p class="text-[#9a4c5f] dark:text-[#ccaab1] text-sm font-medium leading-relaxed mt-1">Press anywhere on your home screen until the apps start to jiggle.</p>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="snap-center shrink-0 flex w-[280px] flex-col gap-4 rounded-2xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-gray-100 dark:border-white/5">
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-gradient-to-br from-pink-50 to-rose-50 dark:from-[#4a2e36] dark:to-[#221015] flex items-center justify-center" data-alt="Abstract illustration highlighting the plus button in top corner">
+<div class="absolute top-4 left-4 size-10 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-white">add</span>
+</div>
+<div class="w-32 h-48 rounded-xl border-2 border-dashed border-primary/20 dark:border-white/20"></div>
+</div>
+<div class="flex gap-3 items-start">
+<div class="flex items-center justify-center size-8 rounded-full bg-primary/10 dark:bg-primary/20 text-primary font-bold shrink-0 text-sm">2</div>
+<div>
+<p class="text-[#1b0d11] dark:text-white text-lg font-bold leading-tight">Tap the (+) button</p>
+<p class="text-[#9a4c5f] dark:text-[#ccaab1] text-sm font-medium leading-relaxed mt-1">Look for the plus icon in the top left corner of your screen.</p>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="snap-center shrink-0 flex w-[280px] flex-col gap-4 rounded-2xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-gray-100 dark:border-white/5">
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-gradient-to-br from-purple-50 to-fuchsia-50 dark:from-[#4a2e36] dark:to-[#221015] flex items-center justify-center" data-alt="Search bar illustration with PetalPost widget card appearing">
+<div class="flex flex-col gap-2 items-center w-full px-8">
+<div class="h-8 w-full bg-white/60 dark:bg-white/10 rounded-full flex items-center px-3 gap-2">
+<span class="material-symbols-outlined text-xs opacity-50">search</span>
+<div class="h-2 w-16 bg-current opacity-20 rounded-full"></div>
+</div>
+<div class="h-20 w-full bg-primary rounded-xl shadow-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">favorite</span>
+</div>
+</div>
+</div>
+<div class="flex gap-3 items-start">
+<div class="flex items-center justify-center size-8 rounded-full bg-primary/10 dark:bg-primary/20 text-primary font-bold shrink-0 text-sm">3</div>
+<div>
+<p class="text-[#1b0d11] dark:text-white text-lg font-bold leading-tight">Search 'PetalPost'</p>
+<p class="text-[#9a4c5f] dark:text-[#ccaab1] text-sm font-medium leading-relaxed mt-1">Find the app in the list and select the widget size you prefer.</p>
+</div>
+</div>
+</div>
+<!-- Spacer for right padding in scroll -->
+<div class="w-2 shrink-0"></div>
+</div>
+<!-- Pagination / Scroll Indicator -->
+<div class="flex justify-center gap-1.5 mt-2 mb-6">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-primary/20"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-primary/20"></div>
+</div>
+</div>
+<!-- Tertiary Action: Test Widget -->
+<div class="w-full flex justify-center mb-4">
+<button class="flex items-center gap-2 px-4 py-2 rounded-full text-primary hover:bg-primary/5 transition-colors text-sm font-bold">
+<span class="material-symbols-outlined text-lg">preview</span>
+                Test widget preview
+            </button>
+</div>
+<!-- Bottom Actions Sticky -->
+<div class="mt-auto px-6 pb-8 pt-4 bg-background-light dark:bg-background-dark bg-opacity-95 backdrop-blur-sm z-20">
+<div class="flex flex-col gap-3">
+<button class="w-full h-14 rounded-full bg-primary hover:bg-primary/90 active:scale-[0.98] transition-all text-white text-lg font-bold shadow-[0_8px_20px_-6px_rgba(238,43,91,0.4)] flex items-center justify-center gap-2 group">
+<span>I placed it</span>
+<span class="group-hover:animate-bounce">✅</span>
+</button>
+<button class="w-full h-12 rounded-full text-[#9a4c5f] dark:text-[#eebbca] hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-base font-semibold">
+                    Skip for now
+                </button>
+</div>
+</div>
+</div>
+</body></html>

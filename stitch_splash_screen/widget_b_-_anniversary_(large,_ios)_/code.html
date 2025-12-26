@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Widget B - Anniversary (Large, iOS)</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>/* Custom styles for the subtle heart pattern */
+.heart-pattern {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDpUdU_DzsQZxde6yUHX4hQkTFdS8-XOKJxTr1EE2_dTOllN-bSOpDU6tRWOq3TVSJLfaJ39yvm_KPoupmvC8eMkEA57O6F6v7e-k9ETw_51Ld800EcvwOQbPMrxph8W9TSa3YYFF3j8FzOJpKk6STmeZsyo1bT-J5hfapoRHGw2wBKs8-WIhowWDMMna0s4Nj_95bLhnOXCLYTqpSO-5eFHh2mniO6XkAYPokn-aAFYXlMMbYU1i54OD2Cwyc0GvsZYI01Jp4jTLo)
+    }
+/* iOS Widget Shadow Simulation */
+.ios-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.03)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-slate-100 flex items-center justify-center min-h-screen p-4 font-display">
+<!-- Design Container (Phone Simulator) -->
+<div class="relative w-full max-w-sm mx-auto">
+<!-- Context Label -->
+<div class="mb-8 text-center">
+<h2 class="text-xl font-bold text-slate-800">iOS Large Widget</h2>
+<p class="text-sm text-slate-500">329x345pt</p>
+</div>
+<!-- Widget Wrapper (Size simulation: roughly 329x345px) -->
+<div class="relative w-full aspect-[329/345] bg-white rounded-[2rem] ios-shadow overflow-hidden flex flex-col group cursor-pointer hover:scale-[1.02] transition-transform duration-200">
+<!-- Background Pattern -->
+<div class="absolute inset-0 heart-pattern bg-background-light dark:bg-background-dark pointer-events-none z-0"></div>
+<!-- Branding (Top Right) -->
+<div class="absolute top-5 right-5 z-10 opacity-40">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">local_florist</span>
+</div>
+<!-- Content Area -->
+<div class="relative z-10 flex flex-col items-center justify-center h-full p-6 text-center">
+<!-- Main Counter -->
+<div class="flex flex-col items-center justify-center mb-6">
+<h1 class="text-7xl font-extrabold text-primary tracking-tight leading-none mb-2">1,042</h1>
+<p class="text-slate-600 dark:text-slate-300 text-lg font-semibold uppercase tracking-wide">Days Loving You</p>
+</div>
+<!-- Milestone Pill -->
+<div class="bg-primary/10 border border-primary/10 rounded-full px-4 py-2 flex items-center gap-2 mb-8">
+<span class="material-symbols-outlined text-primary" style="font-size: 18px;">celebration</span>
+<span class="text-primary text-sm font-semibold">3rd Anniversary in 14 days</span>
+</div>
+<!-- Secondary Info / Quote -->
+<div class="max-w-[80%]">
+<p class="text-slate-400 dark:text-slate-500 text-xs italic">"Every love story is beautiful, but ours is my favorite."</p>
+</div>
+</div>
+<!-- Bottom decorative element (Optional subtle gradient) -->
+<div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-primary/5 to-transparent z-0 pointer-events-none"></div>
+</div>
+<!-- Spacer -->
+<div class="h-12"></div>
+<!-- Empty State Widget Wrapper -->
+<div class="mb-4 text-center">
+<h2 class="text-sm font-bold text-slate-400">Empty State</h2>
+</div>
+<div class="relative w-full aspect-[329/345] bg-white rounded-[2rem] ios-shadow overflow-hidden flex flex-col group cursor-pointer hover:scale-[1.02] transition-transform duration-200">
+<!-- Background Pattern -->
+<div class="absolute inset-0 bg-background-light dark:bg-background-dark z-0"></div>
+<!-- Branding -->
+<div class="absolute top-5 right-5 z-10 opacity-30">
+<span class="material-symbols-outlined text-slate-400" style="font-size: 20px;">local_florist</span>
+</div>
+<!-- Content Area -->
+<div class="relative z-10 flex flex-col items-center justify-center h-full p-8 text-center gap-6">
+<div class="w-20 h-20 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-300 dark:text-slate-600 mb-2">
+<span class="material-symbols-outlined filled" style="font-size: 40px;">sentiment_content</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-2xl font-bold text-slate-800 dark:text-slate-100">When did it start?</h3>
+<p class="text-slate-500 text-sm px-4">Set your anniversary date to start counting the days.</p>
+</div>
+<button class="flex items-center justify-center gap-2 bg-primary text-white font-semibold py-3 px-6 rounded-full w-full hover:bg-opacity-90 transition-all shadow-sm shadow-primary/30">
+<span class="material-symbols-outlined" style="font-size: 20px;">calendar_add_on</span>
+<span>Set Anniversary Date</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

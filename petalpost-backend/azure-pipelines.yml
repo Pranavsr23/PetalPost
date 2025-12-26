@@ -1,0 +1,26 @@
+trigger:
+  - main
+
+stages:
+  - stage: deploy
+    displayName: Deploy Firebase backend
+    jobs:
+      - job: functions
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - checkout: self
+          - task: NodeTool@0
+            inputs:
+              versionSpec: "18.x"
+            displayName: "Install Node.js"
+          - script: "npm install"
+            workingDirectory: "functions"
+            displayName: "Install dependencies"
+          - script: "npm run build"
+            workingDirectory: "functions"
+            displayName: "Build functions"
+          - script: "npm install -g firebase-tools"
+            displayName: "Install Firebase CLI"
+          - script: "firebase deploy --only functions,firestore:rules,firestore:indexes,storage --token $(FIREBASE_TOKEN)"
+            displayName: "Deploy Firebase"

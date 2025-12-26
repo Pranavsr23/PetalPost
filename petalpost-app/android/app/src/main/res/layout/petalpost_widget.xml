@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latest note"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:textColor="#EE2B5B" />
+
+    <TextView
+        android:id="@+id/preview_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_text"
+        android:layout_marginTop="6dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:text="Open PetalPost"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="#221015" />
+
+    <TextView
+        android:id="@+id/sender_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/preview_text"
+        android:layout_marginTop="6dp"
+        android:text=""
+        android:textSize="12sp"
+        android:textColor="#8B7D83" />
+
+    <View
+        android:id="@+id/unread_dot"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_alignParentEnd="true"
+        android:background="@android:color/holo_red_dark"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="2dp" />
+</RelativeLayout>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PetalPost - Memories</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2f1b20",
+                        "text-main": "#1b0d11",
+                        "text-muted": "#9a4c5f",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem", 
+                        "2xl": "2.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-text-main dark:text-white transition-colors duration-300">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
+<!-- Header Section -->
+<header class="px-5 pt-8 pb-2">
+<h1 class="text-text-main dark:text-white tracking-tight text-[34px] font-extrabold leading-tight text-left">Memories</h1>
+</header>
+<!-- Tabs (Segmented Control) -->
+<div class="px-5 py-3">
+<div class="flex h-12 flex-1 items-center justify-center rounded-full bg-surface-light dark:bg-surface-dark p-1.5 shadow-sm border border-gray-100 dark:border-gray-800">
+<!-- Favorites Tab (Inactive in this view) -->
+<label class="group flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-4 transition-all duration-300">
+<span class="truncate text-text-muted dark:text-gray-400 font-semibold text-sm group-hover:text-primary transition-colors">Favorites</span>
+<input class="invisible w-0 absolute" name="view_tab" type="radio" value="Favorites"/>
+</label>
+<!-- All Tab (Active) -->
+<label class="group flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-4 bg-primary shadow-md transition-all duration-300">
+<span class="truncate text-white font-semibold text-sm">All</span>
+<input checked="" class="invisible w-0 absolute" name="view_tab" type="radio" value="All"/>
+</label>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-5 py-2">
+<div class="flex w-full items-center rounded-full bg-surface-light dark:bg-surface-dark h-12 border border-gray-100 dark:border-gray-800 shadow-sm transition-all focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary">
+<div class="flex items-center justify-center pl-4 pr-2">
+<span class="material-symbols-outlined text-primary text-[22px]">search</span>
+</div>
+<input class="flex w-full bg-transparent border-none text-text-main dark:text-white placeholder:text-text-muted/60 dark:placeholder:text-gray-500 focus:ring-0 text-base font-medium h-full rounded-r-full" placeholder="Search your love notes..." type="text"/>
+</div>
+</div>
+<!-- Filter Chips -->
+<div class="w-full overflow-x-auto no-scrollbar py-3 pl-5 pr-2">
+<div class="flex gap-3 min-w-max">
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 pl-4 pr-3 shadow-sm transition-all active:scale-95">
+<span class="text-text-main dark:text-gray-200 text-sm font-semibold">Space</span>
+<span class="material-symbols-outlined text-text-muted text-[20px]">expand_more</span>
+</button>
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-primary text-white pl-4 pr-3 shadow-md shadow-primary/20 transition-all active:scale-95">
+<span class="text-sm font-semibold">Type</span>
+<span class="material-symbols-outlined text-white text-[20px]">expand_more</span>
+</button>
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 pl-4 pr-3 shadow-sm transition-all active:scale-95">
+<span class="text-text-main dark:text-gray-200 text-sm font-semibold">Surprise</span>
+<span class="material-symbols-outlined text-text-muted text-[20px]">expand_more</span>
+</button>
+<button class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 pl-4 pr-3 shadow-sm transition-all active:scale-95">
+<span class="text-text-main dark:text-gray-200 text-sm font-semibold">Time Capsule</span>
+<span class="material-symbols-outlined text-text-muted text-[20px]">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Content Grid (Masonry-ish) -->
+<div class="flex-1 px-5 py-2 overflow-y-auto no-scrollbar">
+<div class="columns-2 gap-4 pb-24 space-y-4">
+<!-- Card 1: Image/Handwriting -->
+<div class="break-inside-avoid relative flex flex-col gap-2 p-3 bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow cursor-pointer group">
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Handwritten note on lined paper saying Good Morning" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD6thTcjYHtmzthIOPSxKopeojFjRSPAZ686IHE_zGhdvEsrkM0OOiE247QOQvapGVV5vPwg77RktkvMaGRK7rlF-vzm4AXzAdqtaGVGBJFFnQcXI_k8HQVruT-vmkHTl-4DoWmtzqZSNQKqozB6IC1xXvqqiNhlHOh7Z5VK4UtGdIW-LVqBJ4gyGK45X34q1KQPrmiJwwfiMIbgxqwi0fs2ycw_2oH4kOlHCFuFkeOyauD36m9wlymOQ4PMubVX-Bc8pSauxW1kmg');">
+</div>
+<div class="absolute top-2 right-2 bg-white/90 dark:bg-black/50 backdrop-blur-sm p-1.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-primary text-[16px] block">favorite</span>
+</div>
+</div>
+<div class="px-1">
+<p class="text-text-main dark:text-white text-sm font-bold leading-tight">Good morning ☀️</p>
+<p class="text-text-muted dark:text-gray-400 text-xs font-medium mt-0.5">Handwriting</p>
+</div>
+</div>
+<!-- Card 2: Voice Note -->
+<div class="break-inside-avoid relative flex flex-col gap-2 p-3 bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow cursor-pointer">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden bg-primary/5 dark:bg-primary/10 flex items-center justify-center">
+<!-- Abstract Waveform -->
+<div class="flex gap-1 items-center justify-center h-12">
+<div class="w-1 h-4 bg-primary/40 rounded-full animate-pulse"></div>
+<div class="w-1 h-8 bg-primary/60 rounded-full"></div>
+<div class="w-1 h-10 bg-primary rounded-full"></div>
+<div class="w-1 h-6 bg-primary/60 rounded-full"></div>
+<div class="w-1 h-3 bg-primary/40 rounded-full animate-pulse"></div>
+</div>
+<div class="absolute top-2 right-2 bg-white/90 dark:bg-black/50 backdrop-blur-sm p-1.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-text-main dark:text-white text-[16px] block">mic</span>
+</div>
+<div class="absolute bottom-2 left-2 right-2 flex justify-between items-center px-2">
+<span class="text-[10px] font-bold text-primary bg-white/80 dark:bg-black/30 px-2 py-0.5 rounded-full">0:42</span>
+</div>
+</div>
+<div class="px-1">
+<p class="text-text-main dark:text-white text-sm font-bold leading-tight">Miss you loads</p>
+<p class="text-text-muted dark:text-gray-400 text-xs font-medium mt-0.5">Voice Note</p>
+</div>
+</div>
+<!-- Card 3: Text Note -->
+<div class="break-inside-avoid relative flex flex-col gap-2 p-3 bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow cursor-pointer">
+<div class="relative w-full aspect-[3/2] rounded-xl overflow-hidden bg-[#fff0f5] dark:bg-[#3d1e26] p-4 flex items-center justify-center text-center">
+<p class="font-handwriting text-primary text-base font-semibold leading-tight italic">"Can't wait for dinner tonight! 🍷"</p>
+</div>
+<div class="px-1">
+<p class="text-text-main dark:text-white text-sm font-bold leading-tight">Dinner at 8?</p>
+<p class="text-text-muted dark:text-gray-400 text-xs font-medium mt-0.5">Text</p>
+</div>
+</div>
+<!-- Card 4: Locked / Time Capsule -->
+<div class="break-inside-avoid relative flex flex-col gap-2 p-3 bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow cursor-pointer">
+<div class="relative w-full aspect-[3/4] rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center blur-md scale-110 opacity-60" data-alt="Blurred romantic sunset view representing locked content" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBis6k4cFURw4gc0cQyJUHcUj3Agthf19JVtg_CD_0jApFQw__nugOqPgTX3sholI6l1R5YX7TyzB3zPEuYep_LtnUZmaOf0ezLrwL2oBumBauANR6FwH_eLSHVBI5Tx36FzMpDQSNfZCQqxaaZcv5pWRVIeZSRMZ99z5HaW50TufWjiMVzAkpKYv5v6k4CCcJ3uUGVj-_x6teopOiwBvcZoLpyEMLHM7XYFLKC6kwc7VKAEvRCasv_pjuIeAMN0Cjvn7pmeGw9qZU');">
+</div>
+<div class="absolute inset-0 bg-black/10 flex flex-col items-center justify-center gap-2">
+<div class="bg-white/30 backdrop-blur-md p-3 rounded-full border border-white/40 shadow-sm">
+<span class="material-symbols-outlined text-white text-[24px] block shadow-sm">lock</span>
+</div>
+<span class="bg-black/40 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-1 rounded-full border border-white/10">Opens in 2 days</span>
+</div>
+</div>
+<div class="px-1">
+<p class="text-text-main dark:text-white text-sm font-bold leading-tight">Our Anniversary</p>
+<p class="text-primary text-xs font-medium mt-0.5">Time Capsule</p>
+</div>
+</div>
+<!-- Card 5: Photo -->
+<div class="break-inside-avoid relative flex flex-col gap-2 p-3 bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow cursor-pointer group">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Two cats cuddling together representing a cozy moment" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEUg-GvdkPyvx4tceCkdnDYzOeFBYGJxJJio_r6fe26hosKhqM9nNVSu0miZOQleyeheHqcawZ6lygAaRn-pzTBp2aSXU9dcNhqx_0dB0vN3CHecXYklS6cIdgWNLEkLu7D0rkNtZQQ6U9LYrBaJO9TegzpaytyBUErbbhbxrZN1caq4L4gjG3waBwPaMW7mLOR1wDdC4uRt645XUnjuuG-Wtac8vNcccyPN4-0KN76qrd3q0AlDhGaxpR-4q1ocQLLDvHvLg3te0');">
+</div>
+</div>
+<div class="px-1">
+<p class="text-text-main dark:text-white text-sm font-bold leading-tight">The kitties</p>
+<p class="text-text-muted dark:text-gray-400 text-xs font-medium mt-0.5">Photo</p>
+</div>
+</div>
+<!-- Card 6: Surprise -->
+<div class="break-inside-avoid relative flex flex-col gap-2 p-3 bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow cursor-pointer">
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-gradient-to-br from-pink-200 to-rose-200 dark:from-pink-900 dark:to-rose-900 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary dark:text-white text-[48px] opacity-80">redeem</span>
+<div class="absolute top-2 right-2 bg-white/90 dark:bg-black/50 backdrop-blur-sm p-1.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-primary text-[16px] block">favorite</span>
+</div>
+</div>
+<div class="px-1">
+<p class="text-text-main dark:text-white text-sm font-bold leading-tight">A little gift</p>
+<p class="text-text-muted dark:text-gray-400 text-xs font-medium mt-0.5">Surprise</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<nav class="absolute bottom-0 w-full bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-lg border-t border-gray-100 dark:border-gray-800 px-6 py-3 pb-6 flex justify-between items-center z-20">
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-[26px]">home</span>
+<span class="text-[10px] font-medium text-gray-400 group-hover:text-primary">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-primary text-[26px] font-variation-settings-fill">favorite</span>
+<span class="text-[10px] font-medium text-primary">Memories</span>
+</button>
+<!-- Center FAB Placeholder -->
+<button class="relative -top-6 bg-primary text-white rounded-full p-4 shadow-lg shadow-primary/30 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[28px]">edit</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-[26px]">calendar_month</span>
+<span class="text-[10px] font-medium text-gray-400 group-hover:text-primary">Dates</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-[26px]">person</span>
+<span class="text-[10px] font-medium text-gray-400 group-hover:text-primary">Profile</span>
+</button>
+</nav>
+<!-- Subtle Gradient Overlay at bottom for better scroll feel -->
+<div class="absolute bottom-[80px] left-0 right-0 h-12 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent pointer-events-none z-10"></div>
+</div>
+</body></html>

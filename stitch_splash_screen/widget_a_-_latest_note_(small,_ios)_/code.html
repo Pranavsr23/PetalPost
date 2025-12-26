@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PetalPost iOS Widgets</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2c181e",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "1.75rem", // Closer to iOS squircle feel
+                        "3xl": "2rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'widget': '0 4px 20px rgba(0, 0, 0, 0.08)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            /* iOS Wallpaper simulation */
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            min-height: 100vh;
+        }
+        
+        /* Custom scrollbar hiding */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* iOS Squircle-ish simulation */
+        .ios-widget {
+            border-radius: 22px; 
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex items-center justify-center py-10 px-4">
+<!-- Phone Container Simulation -->
+<div class="relative w-full max-w-sm bg-background-light dark:bg-background-dark rounded-[3rem] shadow-2xl border-[8px] border-white dark:border-gray-800 overflow-hidden min-h-[800px]">
+<!-- Status Bar Area -->
+<div class="h-14 w-full flex justify-between items-center px-8 pt-2">
+<span class="font-bold text-sm text-gray-900 dark:text-white">9:41</span>
+<div class="flex gap-1.5 items-center">
+<span class="material-symbols-outlined text-sm text-gray-900 dark:text-white">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-sm text-gray-900 dark:text-white">wifi</span>
+<span class="material-symbols-outlined text-sm text-gray-900 dark:text-white">battery_full</span>
+</div>
+</div>
+<!-- Home Screen Content -->
+<div class="px-6 py-4 flex flex-col gap-8 h-full">
+<!-- Section Header -->
+<div class="flex flex-col gap-1">
+<h1 class="text-2xl font-bold text-gray-900 dark:text-white">PetalPost Widgets</h1>
+<p class="text-sm text-gray-500 dark:text-gray-400">Small (2x2) Widget Variations</p>
+</div>
+<!-- Widgets Grid -->
+<div class="grid grid-cols-2 gap-4 w-full place-items-center">
+<!-- STATE 1: SURPRISE NOTE -->
+<div class="group relative flex flex-col items-center">
+<div class="ios-widget relative w-[158px] h-[158px] bg-white dark:bg-surface-dark shadow-widget overflow-hidden flex flex-col text-left group-hover:scale-[1.02] transition-transform duration-300">
+<!-- Background Image -->
+<div class="absolute inset-0 bg-cover bg-center z-0" data-alt="Abstract blurry pink and orange gradient representing a hidden surprise" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHp-c4YAZOxbYWZQt0Pd-9sMPmVxhAH93pspfBNBqTN51-rcKU1xb2ozXsaYtdef1LzQ0Gp1E95F3ZkgVyKsxVayIWoX8FGAggOznlPAIRXfpkW_cIfiC4xAhno6FtSq_bfwNGRQ_cuA0i6zWZoDZxD9SDUncLb4dxF2JOKe-UACQkwOzdU7NWaYmuJ5bwNqqGAd4KMXGD-4popV32Ppc9JTZ13F90kYa4629IEEoeizsMew3xtZV6aM5sN_Uj4zT6NMA5QIGoYig'); filter: blur(8px) brightness(0.9);">
+</div>
+<!-- Overlay Content -->
+<div class="relative z-10 flex flex-col justify-between h-full p-4 bg-black/10">
+<div class="flex items-center gap-1.5">
+<div class="w-5 h-5 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-white">favorite</span>
+</div>
+<span class="text-xs font-medium text-white/90 drop-shadow-md">From Alex</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-white font-bold text-lg leading-tight drop-shadow-md">Love Note</h3>
+<button class="bg-white/25 backdrop-blur-md border border-white/40 text-white text-[10px] font-bold py-1.5 px-3 rounded-full w-fit">
+                                    Tap to reveal
+                                </button>
+</div>
+</div>
+</div>
+<span class="mt-2 text-xs font-medium text-gray-800 dark:text-white">PetalPost</span>
+</div>
+<!-- STATE 2: LOCKED TIME CAPSULE -->
+<div class="group relative flex flex-col items-center">
+<div class="ios-widget relative w-[158px] h-[158px] bg-white dark:bg-surface-dark shadow-widget overflow-hidden flex flex-col justify-between p-4 group-hover:scale-[1.02] transition-transform duration-300">
+<!-- Top Metadata -->
+<div class="flex justify-between items-start">
+<span class="text-primary dark:text-primary/90 text-[10px] font-bold uppercase tracking-wider">Time Capsule</span>
+<span class="material-symbols-outlined text-primary/40 text-lg">lock_clock</span>
+</div>
+<!-- Center Content -->
+<div class="flex flex-col items-center justify-center gap-1 flex-1">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-primary text-xl">lock</span>
+</div>
+<span class="text-gray-900 dark:text-white text-base font-bold text-center leading-tight">Opens<br/>Friday</span>
+</div>
+<!-- Bottom -->
+<div class="border-t border-gray-100 dark:border-gray-700 pt-2 mt-1">
+<p class="text-[10px] text-gray-400 dark:text-gray-500 text-center font-medium">Updated 2m ago</p>
+</div>
+</div>
+<span class="mt-2 text-xs font-medium text-gray-800 dark:text-white">PetalPost</span>
+</div>
+<!-- STATE 3: VOICE NOTE -->
+<div class="group relative flex flex-col items-center">
+<div class="ios-widget relative w-[158px] h-[158px] bg-primary/5 dark:bg-surface-dark shadow-widget overflow-hidden flex flex-col justify-between p-4 group-hover:scale-[1.02] transition-transform duration-300">
+<!-- Header -->
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-cover bg-center border border-white dark:border-gray-600 shadow-sm" data-alt="Profile picture of partner Alex" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_flGQab5eEDKCv56vmy7Rn1PMXo6y1Ybr1oG3r5j2_b1v3CjJ73lnmNPyz_ozcfGXJqlS6xXjtnSB7IM2lXVKYS595UoiQow0qf0HtKf3wKJfKRlLBpWoBT3KzcMYFNHyybpMy5BklPc9bhY7nR_tRO-WnMFfSuImY6ZWdZMolWkq-wtc9IvqEuGCywpW6vM73tQEH5fVaaO4U1zJpjlqnNRUd4vivrQUWIbCaBPpsBJjWX5iNZTkwMegKLXT22g3raZlAzUIMak');"></div>
+<span class="text-xs font-semibold text-gray-800 dark:text-white">Alex</span>
+</div>
+<!-- Main Content -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-1 opacity-80">
+<span class="material-symbols-outlined text-primary text-sm">headphones</span>
+<span class="text-[11px] font-medium text-primary">New voice note</span>
+</div>
+<!-- Fake Waveform -->
+<div class="flex items-center gap-[3px] h-8">
+<div class="w-1 bg-primary/40 h-3 rounded-full"></div>
+<div class="w-1 bg-primary/60 h-5 rounded-full"></div>
+<div class="w-1 bg-primary h-8 rounded-full"></div>
+<div class="w-1 bg-primary h-6 rounded-full"></div>
+<div class="w-1 bg-primary/80 h-4 rounded-full"></div>
+<div class="w-1 bg-primary/50 h-3 rounded-full"></div>
+<div class="w-1 bg-primary/30 h-2 rounded-full"></div>
+<div class="w-1 bg-primary/20 h-2 rounded-full"></div>
+</div>
+</div>
+<!-- Duration Pill -->
+<div class="self-start">
+<span class="inline-flex items-center px-2 py-0.5 rounded-md bg-white dark:bg-white/10 border border-gray-100 dark:border-gray-700 text-[10px] font-bold text-gray-600 dark:text-gray-300 shadow-sm">
+                                0:45
+                            </span>
+</div>
+</div>
+<span class="mt-2 text-xs font-medium text-gray-800 dark:text-white">PetalPost</span>
+</div>
+<!-- STATE 4: EMPTY STATE -->
+<div class="group relative flex flex-col items-center">
+<div class="ios-widget relative w-[158px] h-[158px] bg-white dark:bg-surface-dark shadow-widget overflow-hidden flex flex-col items-center justify-center p-4 text-center group-hover:scale-[1.02] transition-transform duration-300">
+<div class="absolute top-0 right-0 p-3 opacity-10">
+<span class="material-symbols-outlined text-4xl text-primary transform rotate-12">favorite</span>
+</div>
+<div class="flex flex-col items-center gap-3 z-10">
+<p class="text-sm font-bold text-gray-800 dark:text-white leading-tight">Missing<br/>them?</p>
+<button class="flex flex-col items-center justify-center w-12 h-12 bg-primary text-white rounded-2xl shadow-lg shadow-primary/30 hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-2xl">edit_note</span>
+</button>
+<span class="text-[10px] font-medium text-primary dark:text-primary/80">Send a note 💌</span>
+</div>
+</div>
+<span class="mt-2 text-xs font-medium text-gray-800 dark:text-white">PetalPost</span>
+</div>
+</div>
+<!-- Context Note for Demo -->
+<div class="mt-auto mb-4 p-4 bg-white/50 dark:bg-white/5 backdrop-blur-md rounded-2xl border border-white/40 dark:border-white/10">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">info</span>
+<div>
+<p class="text-xs font-semibold text-gray-900 dark:text-white mb-1">Widget Guidelines</p>
+<p class="text-[11px] text-gray-600 dark:text-gray-400 leading-relaxed">
+                            These small widgets prioritize intimate actions. The blurred state ensures privacy on the home screen, while the locked state builds anticipation.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Home Bar -->
+<div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gray-900 dark:bg-white rounded-full opacity-20"></div>
+</div>
+</body></html>

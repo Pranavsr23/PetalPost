@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PetalPost Widgets</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1b20",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "2xl": "2.5rem", 
+                        "3xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .waveform-bar {
+            animation: wave 1.2s ease-in-out infinite;
+        }
+        @keyframes wave {
+            0%, 100% { height: 40%; }
+            50% { height: 100%; }
+        }
+        /* Stagger animations */
+        .waveform-bar:nth-child(1) { animation-delay: 0.1s; }
+        .waveform-bar:nth-child(2) { animation-delay: 0.2s; }
+        .waveform-bar:nth-child(3) { animation-delay: 0.3s; }
+        .waveform-bar:nth-child(4) { animation-delay: 0.4s; }
+        .waveform-bar:nth-child(5) { animation-delay: 0.5s; }
+        .waveform-bar:nth-child(6) { animation-delay: 0.4s; }
+        .waveform-bar:nth-child(7) { animation-delay: 0.3s; }
+        .waveform-bar:nth-child(8) { animation-delay: 0.2s; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col items-center justify-center p-6 text-slate-800 dark:text-white overflow-x-hidden">
+<div class="w-full max-w-[400px] flex flex-col gap-10">
+<!-- Header Context -->
+<div class="text-center mb-4">
+<h1 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">My Widgets</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Preview of PetalPost home screen widgets</p>
+</div>
+<!-- 1. Surprise State Widget -->
+<div class="relative group">
+<div class="absolute -top-8 left-0 text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 pl-2">State: Surprise</div>
+<!-- Widget Container -->
+<div class="relative w-full aspect-[2/1] rounded-3xl overflow-hidden shadow-lg shadow-primary/10 transition-transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer bg-surface-light dark:bg-surface-dark">
+<!-- Background Image -->
+<div class="absolute inset-0 bg-cover bg-center opacity-90 blur-sm scale-110" data-alt="Abstract pink and purple gradient clouds representing love" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFqQH2X8xnER0X7ETd3pAzmZSpf2FeeVRK3TSLFPfsRfYbFz71XYG-ij4CyPFJ5MxtWqaMCvyYxo8TnVnskaFOo9amQNVA1FPi2jZVAlmN1BxwN-KwggDtdEqUJCZUGzQde9RTD7xsofDDRqGGFjveksFnmDkTJbgZVtPz1cwz7ayiSMyZE-JioWtgLVplLqffKf5uemnOeAN7il1VGcWfLmqOoZhmft39fmTHp3glKMGEqXK_IuYvoOwXbWs2DxR86n1E5J4TkI0');">
+</div>
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+<!-- Content -->
+<div class="absolute inset-0 p-5 flex flex-col justify-between z-10">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+<span class="material-symbols-outlined text-white text-[16px]">favorite</span>
+<span class="text-xs font-medium text-white">PetalPost</span>
+</div>
+<span class="text-[10px] font-medium text-white/80 bg-black/20 px-2 py-0.5 rounded-full backdrop-blur-sm">2m ago</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-yellow-300 animate-pulse">colors_spark</span>
+<p class="text-white text-2xl font-bold leading-tight tracking-tight drop-shadow-sm">Tap to reveal</p>
+</div>
+<p class="text-white/90 text-sm font-medium pl-8">From Alex</p>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. Locked Time Capsule State -->
+<div class="relative group">
+<div class="absolute -top-8 left-0 text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 pl-2">State: Locked</div>
+<div class="relative w-full aspect-[2/1] bg-surface-light dark:bg-surface-dark rounded-3xl p-5 shadow-lg shadow-slate-200/50 dark:shadow-none border border-white/50 dark:border-white/5 flex flex-col justify-between overflow-hidden">
+<!-- Decorative BG Blob -->
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="flex items-start justify-between relative z-10">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">lock_clock</span>
+</div>
+<div>
+<p class="text-slate-900 dark:text-white font-bold text-lg leading-tight">Opens Friday</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">Time Capsule locked</p>
+</div>
+</div>
+<div class="h-8 w-8 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden ring-2 ring-white dark:ring-slate-700">
+<img alt="Portrait of partner smiling" class="w-full h-full object-cover" data-alt="Small avatar of partner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT257q_rnctiBqmSOgYnKTx8kbHT5UcypnRZIr02I4sarn_EzW_1rFfoUvtRYp_HZu-v6d03eVyHAAAihL6zTX6uJKLei2w-FTMMz-3OZ5oCW1WgRqPPeqRTbinMhfnqgBe_C6qK4uGWJXKsjyv13Sldipq46uwjJAY2zMzRYby8lsXBdDKm4Z5k4WhA9GlXA2CA2zFaCHYs79puC9PAJ3b7z7gIYWEqGfKgZC3lyV97ug6JALA9phAVZbw5XTaZVF95R12iut1A8"/>
+</div>
+</div>
+<div class="relative z-10 mt-auto">
+<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-1.5 mb-2 overflow-hidden">
+<div class="bg-primary w-2/3 h-full rounded-full"></div>
+</div>
+<div class="flex justify-between items-center text-[10px] text-slate-400 font-medium">
+<span>Waiting...</span>
+<span>Updated 1h ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Voice Note State -->
+<div class="relative group">
+<div class="absolute -top-8 left-0 text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 pl-2">State: Voice Note</div>
+<div class="relative w-full aspect-[2/1] bg-surface-light dark:bg-surface-dark rounded-3xl p-5 shadow-lg shadow-slate-200/50 dark:shadow-none border border-white/50 dark:border-white/5 flex flex-col justify-between">
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center gap-2">
+<span class="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] font-bold text-primary uppercase tracking-wide">New Audio</span>
+</div>
+<span class="text-[10px] text-slate-400">Just now</span>
+</div>
+<div class="flex items-center gap-4 flex-1">
+<button class="h-12 w-12 rounded-full bg-primary text-white flex items-center justify-center shadow-md hover:bg-primary/90 transition-colors flex-shrink-0">
+<span class="material-symbols-outlined filled text-[28px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<div class="flex-1 flex flex-col justify-center gap-1">
+<p class="text-slate-900 dark:text-white font-bold text-base">Voice note 🎧</p>
+<!-- Fake Waveform -->
+<div class="flex items-center gap-[3px] h-6 opacity-60">
+<div class="w-1 bg-primary rounded-full waveform-bar"></div>
+<div class="w-1 bg-primary rounded-full waveform-bar"></div>
+<div class="w-1 bg-primary rounded-full waveform-bar"></div>
+<div class="w-1 bg-primary rounded-full waveform-bar"></div>
+<div class="w-1 bg-primary rounded-full waveform-bar"></div>
+<div class="w-1 bg-primary rounded-full waveform-bar"></div>
+<div class="w-1 bg-primary/40 rounded-full h-[30%]"></div>
+<div class="w-1 bg-primary/40 rounded-full h-[40%]"></div>
+<div class="w-1 bg-primary/40 rounded-full h-[20%]"></div>
+<span class="text-xs font-medium text-slate-500 ml-2">0:45</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. Empty State -->
+<div class="relative group">
+<div class="absolute -top-8 left-0 text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 pl-2">State: Empty</div>
+<div class="relative w-full aspect-[2/1] bg-gradient-to-br from-surface-light to-[#fff5f7] dark:from-surface-dark dark:to-[#2d1b20] rounded-3xl p-5 shadow-lg shadow-slate-200/50 dark:shadow-none border border-white/50 dark:border-white/5 flex flex-col items-center justify-center text-center gap-3">
+<div class="flex flex-col items-center gap-1">
+<div class="relative mb-1">
+<div class="h-10 w-10 rounded-full overflow-hidden ring-2 ring-white dark:ring-slate-700 mx-auto shadow-sm">
+<img alt="Partner avatar" class="w-full h-full object-cover grayscale opacity-80" data-alt="User profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpCSmXLDTm9RocY-lBw6FoF2Ys_mWxxuUW9XZAXuv7ydubUgcaCLxW-tMom6QAPmfDsE_FEAR0QbQ7qxpTMDJNb_5C8SmPDT6gGxoNGmuzxNFpQ1DjzO1Qru3AD_Jtl9HfjFRfg1RELyZZjcZWkSE-Ye9G0O9JNNt3G8-6tbeYxMl37TAza_UtnqJTyZbMn_24DUzwEaQKrmasbB3BT_qRyo2rps8rq4fkMHE2tDEC7YV94kyJ6ZJuqx4cQq2nIuWus5NI4WuTNMs"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-white dark:bg-surface-dark rounded-full p-0.5">
+<span class="material-symbols-outlined text-slate-400 text-[14px]">sentiment_satisfied</span>
+</div>
+</div>
+<p class="text-slate-900 dark:text-white font-bold text-lg">Thinking of them?</p>
+</div>
+<button class="flex items-center gap-2 bg-primary hover:bg-red-600 text-white px-5 py-2.5 rounded-full font-medium text-sm transition-colors shadow-sm shadow-primary/20 w-full justify-center max-w-[200px]">
+<span>Send a note</span>
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+<p class="absolute bottom-4 text-[10px] text-slate-400">Last updated 5h ago</p>
+</div>
+</div>
+</div>
+</body></html>

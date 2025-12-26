@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PetalPost Widget Design</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#351a20",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "2xl": "2.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for cleaner look if needed */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white transition-colors duration-300 min-h-screen flex flex-col">
+<main class="flex-1 flex flex-col items-center justify-center p-6 lg:p-12 gap-12">
+<div class="text-center max-w-2xl">
+<h1 class="text-4xl font-extrabold mb-3 text-gray-900 dark:text-white tracking-tight">PetalPost Widgets</h1>
+<p class="text-gray-500 dark:text-gray-400 text-lg">Android Home Screen Widget Variations (Large)</p>
+</div>
+<!-- Widget Grid Showcase -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl">
+<!-- State A: Surprise Note (Blurred) -->
+<div class="group relative flex flex-col justify-between w-full aspect-[4/3] max-w-md mx-auto bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm border border-white/50 dark:border-white/5 overflow-hidden transition-all hover:shadow-md">
+<!-- Header -->
+<div class="relative z-20 flex items-center justify-between p-5 pb-2">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-10 w-10 ring-2 ring-primary/20" data-alt="Portrait of a smiling partner Alex" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA6N3KiADqffLXPx3pfMwnpAmAi0OeizGu6wZGc3KOlMBn86uTCT1yD4Aq9lEOs1TKEG4NJUsyHuVOqlV1y12cL6P4khtHCS8iDQLziYInDewwGA19V_onAZygwrLQBgrIS1rwdAnwTW5bAFGUcHEwwKZNtsry3d3MqsgQiFaQvRGrqr6c4XvHHyPU9ynfZzKm-VH6-iReq4m7Z9Mqw9bPQf8otGmWhjndtvIUBcGm1N7ZTIXdrkOxRXo_av1fg5aCnjNZWFtUsM-A");'>
+</div>
+<div class="flex flex-col">
+<p class="text-gray-900 dark:text-white text-base font-bold leading-none">Alex</p>
+<p class="text-primary text-xs font-medium leading-normal mt-1">Updated 2m ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary/40">favorite</span>
+</div>
+<!-- Content Body -->
+<div class="relative flex-1 flex flex-col items-center justify-center p-5 z-10">
+<div class="absolute inset-0 m-4 rounded-xl overflow-hidden">
+<!-- Blurred Background Image -->
+<div class="w-full h-full bg-cover bg-center" data-alt="Blurred abstract pink and orange gradient representing a hidden surprise" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB9cCF1W1jEp6xi6N7d3jOgiwFAPgDzj281PUXgqvQ1xXHWGxq-0tAA8uciLXaSmv9bXxCOfutArNJBEYyMPGOUrCZyTTsc6tnQZ0S7GnGx1XrqkadQN0g-STDnImyr-8KSkZ7KykltuMr0goazIEhNw1zsqaUNpF9JmPVb4yEll5gHjGUlx_mwWzXq2W_IOTtpV2e4ISH_FuUTvN7tHClhk_fY9g5YH60e8ogOk2k8_Z6RUfqcESLCQagtV38HzFh5K8_3HTnN7jk");'></div>
+<!-- Blur Overlay -->
+<div class="absolute inset-0 backdrop-blur-xl bg-white/30 dark:bg-black/20 flex items-center justify-center"></div>
+</div>
+<div class="relative z-20 text-center space-y-4">
+<p class="text-gray-900 dark:text-white text-xl font-bold tracking-tight shadow-sm">Alex sent a surprise!</p>
+<button class="inline-flex items-center justify-center h-12 px-6 bg-primary hover:bg-red-600 text-white text-sm font-bold rounded-full shadow-lg transition-transform active:scale-95">
+<span class="material-symbols-outlined mr-2 text-[20px]">visibility</span>
+                            Tap to reveal
+                        </button>
+</div>
+</div>
+</div>
+<!-- State B: Time Capsule (Locked) -->
+<div class="group relative flex flex-col justify-between w-full aspect-[4/3] max-w-md mx-auto bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm border border-white/50 dark:border-white/5 overflow-hidden transition-all hover:shadow-md">
+<!-- Header -->
+<div class="flex items-center justify-between p-5 pb-2">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-10 w-10 ring-2 ring-gray-200 dark:ring-gray-700" data-alt="Portrait of partner Alex looking thoughtful" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwIFIHJu1snjqin0mTlwDPXemgeY0scjOp_zc9lL_WtUzB4zTvDX41BiBI7CjkcqysBqeEyhPzxFbPyZnwOxX0b05mH7U0z_do2Le9Fgvh7JNQ2GUoMIccQCq63qIpiMa6YPmVFesU-zRfg3xCqKpAmynUmzNOTStBa43dI20SusUAavJXVWqcYQQ3Jb7gr8UL19sTSoOUMUWw7O42w1k2yy12iJeOhTvrp4v0ltMsABoqcPY4GTr1BgH9-2-4Ow9zZywAHll4e6o");'>
+</div>
+<div class="flex flex-col">
+<p class="text-gray-900 dark:text-white text-base font-bold leading-none">Alex</p>
+<p class="text-gray-500 dark:text-gray-400 text-xs font-medium leading-normal mt-1">Sent yesterday</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-300 dark:text-gray-600">lock_clock</span>
+</div>
+<!-- Content Body -->
+<div class="flex-1 flex flex-col items-center justify-center p-5 gap-4">
+<div class="h-20 w-20 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-[40px]">lock</span>
+</div>
+<div class="text-center">
+<p class="text-gray-900 dark:text-white text-lg font-bold">Locked until Friday</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Good things come to those who wait.</p>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="p-5 pt-0">
+<button class="w-full h-12 bg-gray-100 dark:bg-white/10 text-gray-400 dark:text-gray-400 text-sm font-bold rounded-full flex items-center justify-center cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined mr-2 text-[18px]">calendar_today</span>
+                        Opens Friday
+                    </button>
+</div>
+</div>
+<!-- State C: Voice Note -->
+<div class="group relative flex flex-col justify-between w-full aspect-[4/3] max-w-md mx-auto bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm border border-white/50 dark:border-white/5 overflow-hidden transition-all hover:shadow-md">
+<!-- Header -->
+<div class="flex items-center justify-between p-5 pb-2">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-10 w-10 ring-2 ring-primary/20" data-alt="Portrait of partner Alex laughing" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBYjdEwSeWiMraXqfb_OpCjJLuzha3w4CK4wSxoAe_Tho0A80yk24sgtDoT-LOiMIVy6xq37KdtI-hZ8dSkLjxMiwRqzMXsdBClyq4LTyVjc-M05ZI0ZGE1HFCZuzJ_71IQU2k1izi88fq3p65zw1iW6E9rUNi2Fd_5Ro0gPyGKVT3QvfyxucAkDXQvJdqdWMTDLgFX0AabtrYytXVX6CRIqbBnnrtx0fsYWQSdQfI8_-sHmlTego52oAET-8gkDTd5JPhmkiTKVs0");'>
+</div>
+<div class="flex flex-col">
+<p class="text-gray-900 dark:text-white text-base font-bold leading-none">Alex</p>
+<p class="text-primary text-xs font-medium leading-normal mt-1">Updated 5m ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary">graphic_eq</span>
+</div>
+<!-- Content Body -->
+<div class="flex-1 flex flex-col justify-center p-5 gap-6">
+<div class="flex flex-col gap-2">
+<p class="text-gray-900 dark:text-white text-xl font-bold">New voice note 🎧</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">0:45 • Sunday Morning</p>
+</div>
+<!-- Waveform Visualization -->
+<div aria-label="Audio waveform visualization" class="flex items-center gap-1 h-12 w-full px-2">
+<div class="w-1.5 h-4 bg-primary/30 rounded-full"></div>
+<div class="w-1.5 h-6 bg-primary/50 rounded-full"></div>
+<div class="w-1.5 h-8 bg-primary rounded-full"></div>
+<div class="w-1.5 h-5 bg-primary/60 rounded-full"></div>
+<div class="w-1.5 h-10 bg-primary rounded-full"></div>
+<div class="w-1.5 h-7 bg-primary/70 rounded-full"></div>
+<div class="w-1.5 h-4 bg-primary/40 rounded-full"></div>
+<div class="w-1.5 h-6 bg-primary/50 rounded-full"></div>
+<div class="w-1.5 h-9 bg-primary rounded-full"></div>
+<div class="w-1.5 h-5 bg-primary/60 rounded-full"></div>
+<div class="w-1.5 h-3 bg-primary/30 rounded-full"></div>
+<div class="w-1.5 h-6 bg-primary/50 rounded-full"></div>
+<div class="w-1.5 h-8 bg-primary rounded-full"></div>
+<div class="w-1.5 h-4 bg-primary/40 rounded-full"></div>
+<div class="w-1.5 h-2 bg-primary/20 rounded-full"></div>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="p-5 pt-0">
+<button class="w-full h-12 bg-primary hover:bg-red-600 text-white text-sm font-bold rounded-full flex items-center justify-center shadow-md transition-colors">
+<span class="material-symbols-outlined mr-2 text-[20px] fill-current">play_arrow</span>
+                        Tap to listen
+                    </button>
+</div>
+</div>
+<!-- State D: Empty State -->
+<div class="group relative flex flex-col justify-between w-full aspect-[4/3] max-w-md mx-auto bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm border border-white/50 dark:border-white/5 overflow-hidden transition-all hover:shadow-md">
+<!-- Header -->
+<div class="flex items-center justify-between p-5 pb-2">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-10 w-10 grayscale opacity-70" data-alt="Portrait of partner Alex" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAehqdsUU4L9ZyiS0qlpNj7qNgg0DyhEieZc91Uo3c1Lv3ioUY16nC3C_0mZwiTrf3w8NgIIy3GUNMUkn-tvMuY5dC8U0Wqgu_t4Lo-tsf7nN2EsRrP7Ihp4SC9dxkbJ9WUOpaBUtZqGyr9eJTahsx3luxQ0DsK1H0zpD_7xxB1-qnLZxwXyOWPuI6sHIN_Gc7yk1foYyY2mRo3DG5JsbYY2dkirI75Hu1FnhExbp892KYp90JA3foxVZnnP423UB6t8FXVUSS_Z6k");'>
+</div>
+<div class="flex flex-col">
+<p class="text-gray-900 dark:text-white text-base font-bold leading-none">Alex</p>
+<p class="text-gray-400 text-xs font-medium leading-normal mt-1">Last seen 1h ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-300">sentiment_satisfied</span>
+</div>
+<!-- Content Body -->
+<div class="flex-1 flex flex-col items-center justify-center p-5 text-center">
+<div class="w-32 h-24 mb-3 bg-contain bg-center bg-no-repeat opacity-80" data-alt="Illustration of a paper airplane flying" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCry7JX8_YCF0Pl7I2i5_PJ_-SvQ_5hmIUqXCWOscnt7GUJzadgnaT7vUsyn0YPsIpPTy7s8lYh5CYNSdWa6Y8W-sFYW7LuBr5PduV6a6Qvv2EO6HYML7yUdGMOB8zIefSamPpYDbOaghnOLZzaCcNZBrfEW__8xFV04pFoAWQZUi8JI8EWrAPjbIXtu4VvihTaF9fVZBRlClPFuroXA-sDxV8ZsiPLHC7Ohna7FpFOXl9a6SoH9si89pF78k3-ggqhbgVbCRH-vCY");'>
+</div>
+<p class="text-gray-900 dark:text-white text-lg font-bold leading-tight max-w-[80%]">Whatever you're thinking, tell them.</p>
+</div>
+<!-- Footer Action -->
+<div class="p-5 pt-0">
+<button class="w-full h-12 bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 text-gray-900 dark:text-white text-sm font-bold rounded-full flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined mr-2 text-[18px]">favorite</span>
+                        Send a note 💌
+                    </button>
+</div>
+</div>
+</div>
+<footer class="mt-8 text-center text-sm text-gray-400">
+<p>PetalPost © 2023</p>
+</footer>
+</main>
+</body></html>

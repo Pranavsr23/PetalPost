@@ -1,0 +1,18 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isParticipant(spaceId) {
+      return isSignedIn() &&
+        request.auth.uid in firestore.get(/databases/$(database)/documents/spaces/$(spaceId)).data.participantUids;
+    }
+
+    match /spaces/{spaceId}/notes/{noteId}/{allPaths=**} {
+      allow read: if isParticipant(spaceId);
+      allow write: if isParticipant(spaceId);
+    }
+  }
+}

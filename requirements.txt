@@ -1,0 +1,95 @@
+You are a senior Flutter + Firebase engineer. Build a production-ready couples notes app called “PetalPost” with home screen widgets.
+
+Core features:
+1) Users can create multiple “Spaces” (couple profiles). Each Space has participants (usually 2).
+2) In each Space, a user can send a note to the other participant:
+   - Text note
+   - Handwritten note (drawing canvas exported to PNG)
+   - Voice note (MVP+): 10–20s voice clip stored in Firebase Storage, with waveform preview in-app
+3) Recipient sees the latest unread note:
+   - In app (Home + Reveal screen)
+   - On home screen widget IF they installed it (widget shows a preview and opens app for full interaction)
+4) Surprise mode:
+   - Note is blurred in widget + blurred in app until reveal
+   - Scratch-to-reveal happens INSIDE the app (not in widget)
+5) Time Capsule notes:
+   - Sender can lock a note until a future date/time
+   - Recipient sees it as locked until unlockAt
+   - Widget shows “Opens {day}” and opens app
+6) Love Jar:
+   - Users can favorite notes
+   - Love Jar screen: “Open jar” reveals a random favorite note with animation
+   - Optional: Love Jar can include favorites across selected Space only
+7) Anniversary + countdown widget mode:
+   - Each Space can store anniversaryDate
+   - Widget can be configured to show “Days together” and “Next milestone”
+8) Love points + badges:
+   - Award points for sending, reading, daily streaks, reacting
+   - Badge unlocks: themes, stickers, fonts (start with mock assets)
+9) Notifications:
+   - Push notification when new note arrives, and when a time capsule unlocks
+
+Widget support (IMPORTANT):
+- Use home_widget plugin as the Flutter <-> native widget bridge
+- Implement native widget UI:
+  - iOS: WidgetKit (SwiftUI) with deep link into the app
+  - Android: AppWidget or Glance with deep link into the app
+- Widgets read shared storage keys and refresh when app updates them
+- Do NOT attempt scratch gestures inside widget; use “tap to open app to reveal/play”.
+
+Firebase backend:
+- Firebase Auth (Apple/Google + optional email/phone)
+- Cloud Firestore as main DB
+- Firebase Storage for handwriting PNGs and voice audio files
+- Cloud Functions (TypeScript):
+  - On note created: update Space lastNote summary, award points, send FCM to other participant(s)
+  - On time capsule unlock: send notification (scheduled via Cloud Scheduler if needed)
+- FCM tokens stored per user device
+
+Data model (Firestore):
+- users/{uid}
+  - displayName, avatarUrl, createdAt
+  - settings: widgetSpaceId, widgetMode ("latest"|"anniversary"), blurMode
+- users/{uid}/devices/{deviceId}
+  - fcmToken, platform, updatedAt
+- spaces/{spaceId}
+  - name, themeId, createdAt, createdBy
+  - participantUids: [uid1, uid2]
+  - anniversaryDate (optional)
+  - lastNoteId, lastNotePreview, lastNoteAt
+  - inviteCode (random, non-guessable)
+- spaces/{spaceId}/notes/{noteId}
+  - senderUid, createdAt
+  - type: "text"|"handwriting"|"voice"
+  - text (optional)
+  - imageUrl (optional), thumbnailUrl (optional)
+  - audioUrl (optional), audioDurationSec (optional), waveformPeaks (optional)
+  - surprise: boolean
+  - timeCapsule: boolean
+  - unlockAt (timestamp, optional)
+  - deliveredTo: map(uid -> deliveredAt)
+  - readBy: map(uid -> readAt)
+  - reactions: map(uid -> emoji)
+  - isFavoriteBy: map(uid -> boolean)
+
+Security rules:
+- Only authenticated users
+- Only participants can read a Space and its notes
+- Only sender can create a note
+- Only recipients can mark read/react/favorite
+- Validate note types and max sizes
+- Storage rules: only participants can read voice/image files under spaces/{spaceId}/notes/{noteId}/...
+
+App architecture:
+- Use Riverpod + go_router
+- Repository pattern for Firestore/Storage
+- Offline caching enabled
+- Strong loading/error/empty states
+- Basic tests for repositories + widget data mapping
+
+Deliverables:
+- Full Flutter app implementation
+- Firestore security rules + indexes if needed
+- Cloud Functions code + deployment instructions
+- Native widget stubs + bridging keys documented (iOS + Android)
+- Run instructions for Android and iOS

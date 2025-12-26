@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PetalPost Splash Screen</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "petal-dark": "#5e112d", 
+                        "petal-light": "#f47c66",
+                        "background-light": "#fffafb",
+                        "background-dark": "#221015",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                    animation: {
+                        'breathe': 'breathe 2.4s ease-in-out infinite',
+                        'fade-in': 'fadeIn 1.2s ease-out forwards',
+                    },
+                    keyframes: {
+                        breathe: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>.icon-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .logo-font {
+             font-family: 'Manrope', sans-serif;
+             font-weight: 800;
+             letter-spacing: -0.03em;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display antialiased text-gray-900 bg-background-light dark:bg-background-dark selection:bg-primary selection:text-white overflow-hidden">
+<div class="relative flex h-screen w-full flex-col items-center justify-between overflow-hidden bg-[linear-gradient(180deg,_#ffdbe4_0%,_#fff_40%,_#ffefef_100%)] dark:bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] dark:from-[#3a1d24] dark:via-background-dark dark:to-[#150a0d]">
+<div class="flex-1"></div>
+<div class="flex-none flex flex-col items-center justify-center p-8 animate-fade-in gap-8">
+<div class="logo-font text-5xl mb-2 flex items-center justify-center">
+<span class="text-petal-dark">Petal</span><span class="text-petal-light">Post</span>
+</div>
+<div class="relative flex items-center justify-center group">
+<div class="relative">
+<span class="material-symbols-outlined text-[160px] leading-none text-[#eadcd7] dark:text-gray-600/60 select-none" style="font-variation-settings: 'FILL' 1, 'wght' 300;">
+                        mail
+                    </span>
+</div>
+<div class="absolute flex items-center justify-center top-[42%] bg-transparent animate-breathe origin-center z-10 pointer-events-none">
+<span class="material-symbols-outlined text-[64px] select-none bg-gradient-to-br from-[#f48fb1] to-[#f4511e] bg-clip-text text-transparent drop-shadow-sm" style="font-variation-settings: 'FILL' 1, 'wght' 400;">
+                        favorite
+                    </span>
+</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-end w-full pb-12 sm:pb-16 animate-fade-in" style="animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards;">
+<p class="text-gray-400 dark:text-gray-500 text-sm font-medium tracking-wide text-center px-4 opacity-80">
+                Made for two.
+            </p>
+</div>
+</div>
+</body></html>

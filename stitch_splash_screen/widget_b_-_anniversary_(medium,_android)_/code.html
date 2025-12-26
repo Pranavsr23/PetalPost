@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PetalPost Widgets</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom pattern for the subtle background */
+        .bg-heart-pattern {
+            background-image: radial-gradient(#ee2b5b 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen font-display text-slate-900 dark:text-white transition-colors duration-200">
+<div class="max-w-md mx-auto min-h-screen flex flex-col p-6 gap-8">
+<!-- Header -->
+<header class="flex items-center justify-between py-4">
+<div>
+<h1 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">PetalPost</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Home Screen Widgets</p>
+</div>
+<div class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+</header>
+<!-- Section: Active State -->
+<section class="flex flex-col gap-4">
+<div class="flex justify-between items-end">
+<h2 class="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Active State</h2>
+<span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">Medium (2x1)</span>
+</div>
+<!-- Widget Component: Active -->
+<div class="group relative w-full aspect-[2/1] bg-white dark:bg-zinc-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden border border-slate-100 dark:border-zinc-700/50">
+<!-- Subtle Background Pattern -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml;utf8,&lt;svg width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;path d=\'M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z\' fill=\'%23ee2b5b\'/&gt;&lt;/svg&gt;'); background-size: 32px 32px; background-position: center;"></div>
+<div class="relative h-full flex flex-col justify-between p-5">
+<!-- Top Row: Counter & Icon -->
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="text-6xl font-extrabold text-primary tracking-tighter leading-none drop-shadow-sm">365</span>
+<span class="text-slate-500 dark:text-slate-400 font-medium text-sm mt-1 ml-1">Days Loving You</span>
+</div>
+<span class="material-symbols-outlined text-primary/20 text-3xl">favorite</span>
+</div>
+<!-- Bottom Row: Milestone Badge -->
+<div class="flex justify-end">
+<div class="flex items-center gap-1.5 bg-primary/10 dark:bg-primary/20 backdrop-blur-sm pl-2 pr-3 py-1.5 rounded-full border border-primary/10">
+<span class="material-symbols-outlined text-primary text-[16px]">celebration</span>
+<span class="text-xs font-bold text-primary">1 Year in 14 days</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Alternative Visual (Filled) -->
+<section class="flex flex-col gap-4">
+<div class="flex justify-between items-end">
+<h2 class="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Filled Variant</h2>
+</div>
+<!-- Widget Component: Filled -->
+<div class="group relative w-full aspect-[2/1] bg-primary rounded-lg shadow-lg shadow-primary/20 overflow-hidden">
+<!-- Decorative Circle -->
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+<div class="absolute -left-10 -bottom-10 w-32 h-32 bg-black/5 rounded-full blur-xl"></div>
+<div class="relative h-full flex flex-row items-center justify-between p-6">
+<div class="flex flex-col gap-0 z-10">
+<span class="text-white/80 text-sm font-medium uppercase tracking-wide">Together for</span>
+<span class="text-[56px] font-extrabold text-white tracking-tighter leading-none">365</span>
+<span class="text-white/90 text-sm font-medium">Days</span>
+</div>
+<div class="flex flex-col items-end gap-3 z-10">
+<div class="h-10 w-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-md border border-white/30 text-white">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</div>
+<div class="flex items-center gap-1.5 bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+<span class="text-xs font-bold text-white">Anniversary: Oct 12</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Empty State -->
+<section class="flex flex-col gap-4">
+<div class="flex justify-between items-end">
+<h2 class="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">Empty State</h2>
+</div>
+<!-- Widget Component: Empty -->
+<div class="group relative w-full aspect-[2/1] bg-white dark:bg-zinc-800 rounded-lg shadow-sm border border-slate-100 dark:border-zinc-700/50 flex flex-col items-center justify-center text-center p-6 gap-3">
+<div class="flex flex-col items-center gap-1">
+<div class="bg-slate-50 dark:bg-zinc-700 h-10 w-10 rounded-full flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-400">event_upcoming</span>
+</div>
+<p class="text-slate-900 dark:text-white font-bold text-lg">When did it start?</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs max-w-[200px]">Set your anniversary date to start counting the days.</p>
+</div>
+<button class="flex items-center gap-2 bg-primary hover:bg-red-600 transition-colors text-white text-xs font-bold py-2 px-5 rounded-full shadow-sm shadow-primary/30">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Set your Anniversary</span>
+</button>
+</div>
+</section>
+</div>
+<!-- Phone Context Simulation (Footer) -->
+<div class="fixed bottom-0 left-0 w-full p-4 pointer-events-none flex justify-center opacity-50">
+<div class="h-1 w-32 bg-slate-300 dark:bg-slate-700 rounded-full"></div>
+</div>
+</body></html>

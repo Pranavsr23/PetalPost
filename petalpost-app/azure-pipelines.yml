@@ -1,0 +1,39 @@
+trigger:
+  - main
+
+variables:
+  FLUTTER_VERSION: "3.22.0"
+
+stages:
+  - stage: build
+    displayName: Build Flutter apps
+    jobs:
+      - job: android
+        displayName: Android build
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - checkout: self
+          - bash: "git clone https://github.com/flutter/flutter.git -b ${FLUTTER_VERSION} $(Agent.TempDirectory)/flutter"
+            displayName: Install Flutter
+          - bash: "export PATH=\"$(Agent.TempDirectory)/flutter/bin:$PATH\" && flutter --version"
+            displayName: Flutter version
+          - bash: "export PATH=\"$(Agent.TempDirectory)/flutter/bin:$PATH\" && flutter pub get"
+            displayName: Install dependencies
+          - bash: "export PATH=\"$(Agent.TempDirectory)/flutter/bin:$PATH\" && flutter test"
+            displayName: Run tests
+          - bash: "export PATH=\"$(Agent.TempDirectory)/flutter/bin:$PATH\" && flutter build appbundle --dart-define=APP_ENV=prod --dart-define=MIXPANEL_TOKEN=$(MIXPANEL_TOKEN)"
+            displayName: Build Android App Bundle
+
+      - job: ios
+        displayName: iOS build
+        pool:
+          vmImage: "macos-latest"
+        steps:
+          - checkout: self
+          - bash: "git clone https://github.com/flutter/flutter.git -b ${FLUTTER_VERSION} $(Agent.TempDirectory)/flutter"
+            displayName: Install Flutter
+          - bash: "export PATH=\"$(Agent.TempDirectory)/flutter/bin:$PATH\" && flutter pub get"
+            displayName: Install dependencies
+          - bash: "export PATH=\"$(Agent.TempDirectory)/flutter/bin:$PATH\" && flutter build ios --release --no-codesign --dart-define=APP_ENV=prod --dart-define=MIXPANEL_TOKEN=$(MIXPANEL_TOKEN)"
+            displayName: Build iOS (no codesign)

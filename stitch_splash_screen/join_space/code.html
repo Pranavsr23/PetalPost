@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Join Space - PetalPost</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "primary-dark": "#d61f4b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#361b22",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom styles for elements not covered by Tailwind utilities */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Loading spinner animation */
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .spinner {
+            animation: spin 1s linear infinite;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white transition-colors duration-200 min-h-screen flex flex-col items-center">
+<!-- Main Container: Mobile Form Factor -->
+<div class="relative flex h-full min-h-screen w-full max-w-md flex-col bg-background-light dark:bg-background-dark overflow-x-hidden shadow-2xl">
+<!-- Header / TopAppBar -->
+<header class="sticky top-0 z-10 flex items-center justify-between p-4 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-gray-900 dark:text-white group">
+<span class="material-symbols-outlined group-hover:-translate-x-0.5 transition-transform">arrow_back_ios_new</span>
+</button>
+<h1 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10 text-gray-900 dark:text-white">
+                Join Space
+            </h1>
+</header>
+<!-- Main Content Scroll Area -->
+<main class="flex-1 flex flex-col px-6 pt-4 pb-8">
+<!-- Headline Text -->
+<div class="mb-8">
+<h2 class="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white mb-3">
+                    Connect with<br/>your partner
+                </h2>
+<p class="text-gray-600 dark:text-gray-400 text-base font-medium leading-relaxed">
+                    Enter the invite code your partner shared with you to start sending PetalPosts.
+                </p>
+</div>
+<!-- Illustration / Visual (Abstract Connection) -->
+<div class="w-full h-32 mb-8 rounded-2xl overflow-hidden relative bg-gradient-to-r from-primary/10 to-primary/20 dark:from-primary/20 dark:to-primary/30 flex items-center justify-center">
+<div class="absolute inset-0 opacity-20" data-alt="Subtle dot pattern background" style="background-image: radial-gradient(#ee2b5b 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="flex items-center gap-4 text-primary opacity-80">
+<span class="material-symbols-outlined text-4xl">favorite</span>
+<div class="h-1 w-12 bg-primary/30 rounded-full"></div>
+<span class="material-symbols-outlined text-4xl">phonelink_ring</span>
+</div>
+</div>
+<!-- Input Section -->
+<div class="w-full mb-6">
+<label class="block mb-2 text-sm font-bold text-gray-900 dark:text-gray-200 ml-1">
+                    Invite Code
+                </label>
+<div class="relative group">
+<!-- Input Field -->
+<input class="form-input block w-full rounded-2xl border-2 border-primary/30 bg-white dark:bg-surface-dark py-4 pl-5 pr-24 text-lg font-semibold tracking-widest text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-600 focus:border-primary focus:ring-0 focus:outline-none transition-all shadow-sm" placeholder="XR7-9K2" type="text" value=""/>
+<!-- Paste Button (Absolute Positioned) -->
+<div class="absolute inset-y-0 right-2 flex items-center">
+<button class="flex items-center justify-center gap-1.5 rounded-xl bg-primary/10 hover:bg-primary/20 text-primary dark:text-primary-light text-xs font-bold py-2 px-3 transition-colors">
+<span class="material-symbols-outlined text-[16px]">content_paste</span>
+<span>Paste</span>
+</button>
+</div>
+</div>
+<!-- Error Message (Hidden by default, remove 'hidden' to show error state) -->
+<!-- Example: hidden -->
+<div class="hidden flex items-center gap-2 mt-2 ml-1 text-primary text-sm font-medium animate-pulse">
+<span class="material-symbols-outlined text-[18px]">error</span>
+<span>Invalid code. Please check and try again.</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-auto space-y-4">
+<!-- Join Button (Primary CTA) -->
+<button class="w-full flex items-center justify-center gap-2 rounded-full bg-primary hover:bg-primary-dark text-white font-bold text-base h-14 transition-all shadow-lg shadow-primary/20 active:scale-[0.98]">
+<!-- Text (Visible in normal state) -->
+<span>Join Space</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+<!-- Loading State (Hidden by default) -->
+<!-- 
+                    <span class="spinner w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2"></span>
+                    <span>Connecting...</span>
+                    -->
+</button>
+<div class="relative flex py-2 items-center">
+<div class="flex-grow border-t border-gray-200 dark:border-gray-700"></div>
+<span class="flex-shrink-0 mx-4 text-gray-400 dark:text-gray-500 text-xs font-bold uppercase tracking-wider">OR</span>
+<div class="flex-grow border-t border-gray-200 dark:border-gray-700"></div>
+</div>
+<!-- Scan QR Button (Secondary) -->
+<button class="w-full flex items-center justify-center gap-2 rounded-full border-2 border-gray-200 dark:border-gray-700 bg-transparent hover:bg-gray-50 dark:hover:bg-white/5 text-gray-900 dark:text-white font-bold text-base h-14 transition-colors">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+<span>Scan QR Code</span>
+</button>
+</div>
+</main>
+<!-- Footer / Keyboard Spacer -->
+<div class="h-6"></div>
+</div>
+<!-- Demonstration Script for visual states (Optional interaction for preview) -->
+<script>
+        // Simple script to demonstrate states for the user preview
+        const input = document.querySelector('input');
+        const errorMsg = document.querySelector('.hidden.text-primary'); // Select the error div
+        const joinBtn = document.querySelector('button.bg-primary');
+        
+        // Mock interaction
+        joinBtn.addEventListener('click', () => {
+            if(input.value.length < 6) {
+                // Show Error
+                input.classList.add('border-primary');
+                input.classList.remove('border-primary/30');
+                errorMsg.classList.remove('hidden');
+            } else {
+                // Show Loading
+                const originalContent = joinBtn.innerHTML;
+                joinBtn.innerHTML = `<div class="spinner w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2"></div><span>Connecting...</span>`;
+                
+                setTimeout(() => {
+                    joinBtn.innerHTML = originalContent;
+                    alert("Mock Join Success!");
+                }, 2000);
+            }
+        });
+
+        input.addEventListener('input', () => {
+            // Reset error on type
+            input.classList.remove('border-primary');
+            input.classList.add('border-primary/30');
+            errorMsg.classList.add('hidden');
+        })
+    </script>
+</body></html>

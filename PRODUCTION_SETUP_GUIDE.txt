@@ -1,0 +1,139 @@
+PETALPOST PRODUCTION SETUP GUIDE
+================================
+
+This guide covers required configuration before production deployment:
+- Firebase config files (google-services.json, GoogleService-Info.plist)
+- Widget App Group ID (iOS)
+- Android AppWidgetProvider registration
+- Environment variables for app and CI/CD
+
+1) CREATE FIREBASE PROJECTS
+---------------------------
+1. Go to https://console.firebase.google.com
+2. Create two projects: petalpost-dev and petalpost-prod (recommended)
+3. In each project, enable:
+   - Authentication (Apple + Google)
+   - Cloud Firestore
+   - Firebase Storage
+   - Cloud Messaging
+4. Optional: Enable App Check for production hardening
+
+2) ADD ANDROID APP + GOOGLE SERVICES JSON
+-----------------------------------------
+1. In Firebase Console > Project Settings > Your Apps, add Android app.
+2. Set Android package name to match your app:
+   - Check android/app/build.gradle.kts for applicationId
+3. Download google-services.json
+4. Place the file here:
+   petalpost-app/android/app/google-services.json
+5. Ensure google-services Gradle plugin is enabled in:
+   - android/build.gradle.kts
+   - android/app/build.gradle.kts
+   (FlutterFire usually handles this if you run flutterfire configure)
+
+3) ADD iOS APP + GoogleService-Info.plist
+-----------------------------------------
+1. In Firebase Console > Project Settings > Your Apps, add iOS app.
+2. Set iOS bundle ID to match your app:
+   - Check ios/Runner.xcodeproj project settings
+3. Download GoogleService-Info.plist
+4. Place the file here:
+   petalpost-app/ios/Runner/GoogleService-Info.plist
+5. In Xcode, ensure the plist is added to Runner target
+
+4) APPLE SIGN-IN SETUP (iOS)
+-----------------------------
+1. In Apple Developer portal, create a Service ID for Sign in with Apple
+2. Enable Sign in with Apple capability in the Runner target
+3. In Firebase Auth providers, enable Apple and configure Service ID
+
+5) GOOGLE SIGN-IN SETUP (iOS)
+------------------------------
+1. From GoogleService-Info.plist, find REVERSED_CLIENT_ID
+2. In Xcode Runner target > Info, add URL Types
+3. Add REVERSED_CLIENT_ID to the URL Types list
+
+6) WIDGET APP GROUP ID (iOS)
+-----------------------------
+1. In Apple Developer portal, create an App Group, e.g.:
+   group.com.yourcompany.petalpost
+2. Add the App Group to:
+   - Runner target (iOS app)
+   - Widget Extension target (iOS widget)
+3. Pass the App Group ID to Flutter via:
+   --dart-define=APP_GROUP_ID=group.com.yourcompany.petalpost
+4. The app uses APP_GROUP_ID to set HomeWidget app group
+
+7) iOS WIDGET EXTENSION SETUP (WidgetKit)
+-----------------------------------------
+1. In Xcode, add a new Widget Extension target:
+   File > New > Target > Widget Extension
+2. Name it PetalPostWidget
+3. Replace generated SwiftUI code with:
+   petalpost-app/native_widgets/ios/PetalPostWidget.swift
+4. Ensure the widget target has the same App Group ID as the app
+
+8) ANDROID APPWIDGET PROVIDER SETUP
+-----------------------------------
+1. Widget provider class is in:
+   petalpost-app/android/app/src/main/kotlin/com/example/petalpost/PetalPostWidgetProvider.kt
+2. Widget layout:
+   petalpost-app/android/app/src/main/res/layout/petalpost_widget.xml
+3. Widget info XML:
+   petalpost-app/android/app/src/main/res/xml/petalpost_widget_info.xml
+4. AndroidManifest.xml must register the receiver:
+   <receiver android:name=".PetalPostWidgetProvider" ...>
+     <intent-filter>
+       <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+     </intent-filter>
+     <meta-data android:name="android.appwidget.provider"
+       android:resource="@xml/petalpost_widget_info" />
+   </receiver>
+
+9) REQUIRED ENVIRONMENT VARIABLES
+---------------------------------
+App (Flutter):
+- APP_ENV=dev|prod
+- MIXPANEL_TOKEN=YOUR_MIXPANEL_PROJECT_TOKEN
+- FIREBASE_PROJECT_ID=your-firebase-project-id
+- APP_GROUP_ID=group.com.yourcompany.petalpost (iOS only)
+
+Backend (Functions / CI):
+- FIREBASE_TOKEN (for firebase deploy in CI)
+
+Optional CI variables (if you want to inject files at build time):
+- ANDROID_GOOGLE_SERVICES_JSON_BASE64
+- IOS_GOOGLE_SERVICE_INFO_PLIST_BASE64
+
+10) FIREBASE FUNCTIONS & RULES DEPLOYMENT
+-----------------------------------------
+1. Install Firebase CLI:
+   npm install -g firebase-tools
+2. Login:
+   firebase login
+3. From petalpost-backend:
+   firebase deploy --only functions,firestore:rules,firestore:indexes,storage
+
+11) FINAL CHECKLIST
+-------------------
+- google-services.json in android/app/
+- GoogleService-Info.plist in ios/Runner/
+- iOS app group ID configured in app + widget extension
+- Android widget receiver registered in AndroidManifest
+- Mixpanel token set
+- Firebase rules/functions deployed
+
+12) MIXPANEL ANALYTICS SETUP
+----------------------------
+1. Create a Mixpanel project at https://mixpanel.com
+2. Copy the project token
+3. Set MIXPANEL_TOKEN in your local env and CI/CD
+
+13) ASO TOOLING (FREE)
+----------------------
+Recommended free tool: AppTweak Free ASO Tools
+- Keyword discovery and metadata checks
+- https://www.apptweak.com/free-aso-tools
+
+Alternative: AppRadar Free ASO Tools
+- https://appradar.com/free-aso-tools

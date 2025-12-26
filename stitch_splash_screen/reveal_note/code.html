@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PetalPost - Reveal Note</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "primary-dark": "#d61f4a",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                        "surface-dark": "#331920",
+                        "surface-highlight": "#48232c",
+                        "text-muted": "#c992a0",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "2.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hide for cleaner UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary selection:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl">
+<!-- Header -->
+<header class="flex items-center justify-between p-4 z-20">
+<button class="flex size-10 items-center justify-center rounded-full bg-surface-highlight/50 hover:bg-surface-highlight transition-colors text-white backdrop-blur-sm">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+<div class="flex flex-col items-center">
+<span class="text-xs font-bold tracking-widest text-text-muted uppercase">Surprise Mode</span>
+<h2 class="text-white text-base font-bold leading-tight tracking-tight">Alex's Note</h2>
+</div>
+<button class="flex size-10 items-center justify-center rounded-full bg-surface-highlight/50 hover:bg-surface-highlight transition-colors text-white backdrop-blur-sm">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col items-center justify-center p-4 w-full relative z-10">
+<!-- Envelope/Card Container -->
+<!-- Using a slight rotation or scale animation concept in static design via layout -->
+<div class="w-full relative group perspective-1000">
+<!-- The Note Card -->
+<div class="relative flex flex-col w-full bg-surface-dark rounded-2xl overflow-hidden shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] border border-white/5 ring-1 ring-white/5">
+<!-- Card Image Header -->
+<div class="relative h-56 w-full">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Romantic sunset view over a city skyline with warm pink and orange hues" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBR8Iho0gYuM-cRy0FYdf_iGCSGa1JFB2Vq4hqBO1g9lhxwzM9uH24aEnHAPxTDW32KORS8qh6fDsuCxqnQDpyPwJjIJkbuzwcz4zP9AYeeXRWJxFZqFG8CoDUWWZwXFzKMOrjB9lP7oaNK7932lgibsu-bisi1jk9IAtqaPa3eVEmhpA5uRSr-Oxu2vF5EIWe5TVsLx3N6WAT3zqmZwLPEhLt4R9TQnleOBkIeOOp2S2SnIzHFVFHXY88FWBteaGEf2wMd9HSfM5k');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-surface-dark/20 to-transparent"></div>
+<!-- Sender Badge overlapping image -->
+<div class="absolute top-4 left-4 flex items-center gap-3">
+<div class="size-10 rounded-full border-2 border-primary overflow-hidden bg-surface-highlight">
+<img alt="Profile picture of Alex" class="w-full h-full object-cover" data-alt="Profile picture of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEQUPVIDpkrhKEWaqsejURC3jNkKIZ_C7rn9h0S8eqKRUpwswTzsJwe9ChdaL1yeEyQSoJ6DcHfv3AQe3Zb7Lr7ZNBLA1rw9BNZNLoaZIaU7GjnYMsN5F4a882KQcZw3cSw6jADx6HT-pCiWJD1qs8sRe39fvlGL8xibpu4bO41w_63A-_Rrj8UnCBFBTOK3mU9B8t1PyvQvy-XgNFg7irgMND4aVNFFrXvMZGoEMlaJ8JdJ5yp636Iu1rZt-zvhwDvFTB47gGlrU"/>
+</div>
+<div class="flex flex-col drop-shadow-md">
+<span class="text-white text-sm font-bold">Alex</span>
+<span class="text-white/80 text-xs font-medium">2 min ago</span>
+</div>
+</div>
+<!-- Reveal Status Badge -->
+<div class="absolute bottom-4 right-4">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-xs font-bold text-white shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-primary">auto_awesome</span>
+                                Revealed
+                            </span>
+</div>
+</div>
+<!-- Card Body -->
+<div class="px-5 pb-6 pt-2 flex flex-col gap-5">
+<!-- Text Note -->
+<div class="flex flex-col gap-2">
+<h3 class="text-2xl font-bold text-white tracking-tight">Thinking of you ❤️</h3>
+<p class="text-text-muted text-base font-normal leading-relaxed">
+                                Hey love! Just wanted to say I'm thinking about you. Can't wait for our dinner tonight at that italian place!
+                            </p>
+</div>
+<!-- Voice Note Player (Embedded) -->
+<div class="flex flex-col gap-2 p-3 bg-surface-highlight rounded-xl border border-white/5">
+<div class="flex items-center gap-3">
+<button class="flex shrink-0 items-center justify-center rounded-full size-10 bg-primary hover:bg-primary-dark transition-colors text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[20px] ml-0.5" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<div class="flex flex-col flex-1 gap-1.5">
+<div class="flex justify-between items-center text-xs font-medium text-text-muted tracking-wide">
+<span>Voice Note</span>
+<span>0:24</span>
+</div>
+<!-- Waveform visual -->
+<div class="flex h-6 items-center gap-0.5 justify-start opacity-80">
+<div class="w-1 h-3 bg-primary rounded-full"></div>
+<div class="w-1 h-5 bg-primary rounded-full"></div>
+<div class="w-1 h-4 bg-primary rounded-full"></div>
+<div class="w-1 h-6 bg-primary rounded-full animate-pulse"></div>
+<div class="w-1 h-3 bg-primary/40 rounded-full"></div>
+<div class="w-1 h-2 bg-primary/40 rounded-full"></div>
+<div class="w-1 h-4 bg-primary/40 rounded-full"></div>
+<div class="w-1 h-2 bg-primary/40 rounded-full"></div>
+<div class="w-1 h-3 bg-primary/40 rounded-full"></div>
+<div class="w-1 h-2 bg-primary/40 rounded-full"></div>
+<div class="w-1 h-2 bg-primary/40 rounded-full"></div>
+<div class="w-1 h-3 bg-primary/40 rounded-full"></div>
+<div class="w-1 h-2 bg-primary/40 rounded-full"></div>
+<div class="w-1 h-4 bg-primary/40 rounded-full"></div>
+<div class="w-1 h-2 bg-primary/40 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Reaction Row -->
+<div class="flex items-center justify-between pt-2 border-t border-white/5">
+<button class="flex flex-col items-center gap-1 group/reaction">
+<div class="size-10 flex items-center justify-center rounded-full bg-white/5 group-hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-primary text-[24px] group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<span class="text-[10px] font-bold text-primary">1</span>
+</button>
+<button class="flex flex-col items-center gap-1 group/reaction">
+<div class="size-10 flex items-center justify-center rounded-full bg-transparent group-hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-text-muted text-[24px] group-hover:text-white group-hover:scale-110 transition-transform">sentiment_satisfied</span>
+</div>
+<span class="text-[10px] font-bold text-transparent group-hover:text-text-muted transition-colors">0</span>
+</button>
+<button class="flex flex-col items-center gap-1 group/reaction">
+<div class="size-10 flex items-center justify-center rounded-full bg-transparent group-hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-text-muted text-[24px] group-hover:text-white group-hover:scale-110 transition-transform">card_giftcard</span>
+</div>
+<span class="text-[10px] font-bold text-transparent group-hover:text-text-muted transition-colors">0</span>
+</button>
+<button class="flex flex-col items-center gap-1 group/reaction">
+<div class="size-10 flex items-center justify-center rounded-full bg-transparent group-hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-text-muted text-[24px] group-hover:text-white group-hover:scale-110 transition-transform">local_fire_department</span>
+</div>
+<span class="text-[10px] font-bold text-transparent group-hover:text-text-muted transition-colors">0</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Decorative elements behind card (Envelope flap look) -->
+<div class="absolute -top-3 left-4 right-4 h-6 bg-[#3d1e26] rounded-t-xl -z-10"></div>
+<div class="absolute -top-6 left-8 right-8 h-6 bg-[#2d161c] rounded-t-xl -z-20 opacity-60"></div>
+</div>
+</main>
+<!-- Bottom Actions -->
+<footer class="p-4 pb-8 flex justify-center w-full z-20">
+<div class="flex items-center gap-3 w-full max-w-xs">
+<!-- Favorite -->
+<button class="flex items-center justify-center rounded-full size-12 bg-surface-highlight text-text-muted border border-white/5 hover:bg-surface-highlight/80 hover:text-white transition-colors hover:scale-105 active:scale-95 shadow-lg">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 0;">star</span>
+</button>
+<!-- Reply (Primary) -->
+<button class="flex-1 h-12 flex items-center justify-center gap-2 rounded-full bg-primary text-white font-bold text-sm tracking-wide hover:bg-primary-dark transition-all hover:scale-105 active:scale-95 shadow-lg shadow-primary/25">
+<span class="material-symbols-outlined text-[20px]">reply</span>
+                    Reply
+                </button>
+<!-- Save to Love Jar -->
+<button class="flex items-center justify-center rounded-full size-12 bg-surface-highlight text-text-muted border border-white/5 hover:bg-surface-highlight/80 hover:text-white transition-colors hover:scale-105 active:scale-95 shadow-lg">
+<span class="material-symbols-outlined text-[24px]">kitchen</span>
+</button>
+</div>
+</footer>
+<!-- Background ambiance glow -->
+<div class="fixed top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary/10 blur-[100px] rounded-full pointer-events-none -z-0"></div>
+</div>
+</body></html>

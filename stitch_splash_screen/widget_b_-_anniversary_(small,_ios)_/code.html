@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PetalPost iOS Widget Design</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "widget": "1.375rem", // Approx 22px for iOS widgets
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "widget": "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)"
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom pattern for the subtle background */
+        .bg-pattern-hearts {
+            background-color: #ffffff;
+            background-image: radial-gradient(#ee2b5b 0.5px, transparent 0.5px);
+            background-size: 12px 12px;
+        }
+        .dark .bg-pattern-hearts {
+            background-color: #221015;
+            background-image: radial-gradient(#ee2b5b 0.5px, transparent 0.5px);
+            background-size: 12px 12px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display flex flex-col items-center justify-center min-h-screen p-8 transition-colors duration-300">
+<!-- Design Presentation Container -->
+<div class="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Column 1: Active State -->
+<div class="flex flex-col items-center gap-6">
+<h2 class="text-slate-500 dark:text-slate-400 text-sm font-medium tracking-wide uppercase">Active State</h2>
+<!-- iOS Small Widget (Active) -->
+<!-- Size: ~160x160px (Standard iOS small widget is roughly this size on screen) -->
+<div class="relative group w-40 h-40 bg-white dark:bg-background-dark rounded-widget shadow-widget overflow-hidden flex flex-col items-center justify-between p-3.5 ring-1 ring-black/5 dark:ring-white/10">
+<!-- Background Decoration -->
+<div class="absolute inset-0 bg-pattern-hearts opacity-[0.15] pointer-events-none"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/5 pointer-events-none"></div>
+<!-- Header: Icon -->
+<div class="w-full flex justify-end z-10">
+<span class="material-symbols-outlined text-primary/40 text-[18px]">spa</span>
+</div>
+<!-- Main Content: HeadlineText & MetaText -->
+<div class="flex flex-col items-center justify-center z-10 -mt-1">
+<h1 class="text-primary text-[42px] font-extrabold leading-none tracking-tight">402</h1>
+<p class="text-slate-500 dark:text-slate-400 text-[11px] font-medium leading-tight mt-0.5">Days in Love</p>
+</div>
+<!-- Footer: Chip -->
+<div class="z-10 w-full flex justify-center pb-1">
+<div class="flex items-center justify-center gap-x-1 rounded-full bg-primary/10 dark:bg-primary/20 px-2.5 py-1 max-w-full">
+<span class="material-symbols-outlined text-primary text-[10px] filled">favorite</span>
+<p class="text-primary text-[9px] font-bold leading-none truncate">2 Yrs in 3 wks</p>
+</div>
+</div>
+</div>
+<p class="text-xs text-slate-400 text-center max-w-[200px]">Shows the main countdown and next milestone chip.</p>
+</div>
+<!-- Column 2: Empty State -->
+<div class="flex flex-col items-center gap-6">
+<h2 class="text-slate-500 dark:text-slate-400 text-sm font-medium tracking-wide uppercase">Empty State</h2>
+<!-- iOS Small Widget (Empty) -->
+<div class="relative w-40 h-40 bg-white dark:bg-background-dark rounded-widget shadow-widget overflow-hidden flex flex-col items-center justify-center p-4 ring-1 ring-black/5 dark:ring-white/10">
+<!-- Background Decoration -->
+<div class="absolute inset-0 bg-gradient-to-br from-white to-slate-50 dark:from-background-dark dark:to-black pointer-events-none"></div>
+<!-- Empty State Content -->
+<div class="flex flex-col items-center gap-2 z-10">
+<!-- Icon placeholder for image component -->
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-primary text-xl">event_upcoming</span>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+<p class="text-slate-900 dark:text-white text-[13px] font-bold leading-tight text-center">No Date Set</p>
+<p class="text-slate-500 dark:text-slate-400 text-[10px] font-normal leading-normal text-center">When did it start?</p>
+</div>
+<!-- CTA Button -->
+<button class="flex mt-1 cursor-pointer items-center justify-center overflow-hidden rounded-full h-7 px-3 bg-primary text-white text-[10px] font-bold shadow-sm transition-transform active:scale-95">
+<span>Set Date</span>
+</button>
+</div>
+</div>
+<p class="text-xs text-slate-400 text-center max-w-[200px]">Prompts user to open the app and configure the date.</p>
+</div>
+</div>
+<!-- Phone Context Simulation (Optional background element) -->
+<div class="fixed -z-10 inset-0 pointer-events-none opacity-50" data-alt="Blurred abstract background simulating iOS wallpaper" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWkttGWdUPA6ZrZVRnqYzEH4Jt5nCcGTZ4qenOQF3h5lBF5J9K-FM-xxVBOQM9qtcRUZLuI1W3kNKpKjpGIK-xax_bMkCR44-S5HCNYlahv0SOaLEhjj2rGRmLe8YD6uzLNWkcITTNLcF3bQJ5XX6f76ZCxwTHLDD525MaMuhjurvovH4YCmFBbsNdAlhTdhheC-N7OqBGbCQ2ThbKNzrA8VbUbtaSQCmBx94qZWufKPU_uO60kB6T6JpAxSdhfyGdHozX5dN9xUQ'); background-size: cover; background-position: center; filter: blur(40px) opacity(0.2);"></div>
+</body></html>

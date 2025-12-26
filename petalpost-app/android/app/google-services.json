@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "125598647468",
+    "project_id": "petalpost-prod",
+    "storage_bucket": "petalpost-prod.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125598647468:android:89faa7c2561e647057cb09",
+        "android_client_info": {
+          "package_name": "com.example.petalpost"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAthAl4WW9wtpiuS-wBtYpQtEdYbI-Bsmc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

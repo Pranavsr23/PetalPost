@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PetalPost - Compose Note</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        /* Custom scrollbar hiding */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#ee2b5b",
+                "background-light": "#f8f6f6",
+                "background-dark": "#221015",
+                "surface-light": "#ffffff",
+                "surface-dark": "#2d1b20",
+                "text-main": "#1b0d11",
+                "text-subtle": "#9a4c5f",
+              },
+              fontFamily: {
+                "display": ["Plus Jakarta Sans", "sans-serif"],
+                "handwritten": ["Caveat", "cursive"], /* Simulating handwritten font usage if available, falling back to cursive */
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "2.5rem", "full": "9999px"},
+              boxShadow: {
+                  'soft': '0 4px 20px -2px rgba(238, 43, 91, 0.1)',
+                  'card': '0 10px 40px -10px rgba(0,0,0,0.05)',
+                  'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.03)',
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-white antialiased overflow-hidden h-screen w-full flex flex-col items-center justify-center">
+<!-- Mobile Device Container -->
+<div class="relative w-full h-full max-w-md bg-background-light dark:bg-background-dark flex flex-col overflow-hidden mx-auto shadow-2xl">
+<!-- Header Section -->
+<header class="flex-none px-5 pt-6 pb-2 z-20">
+<!-- Navigation & Recipient -->
+<div class="flex items-center justify-between mb-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-text-main dark:text-white" style="font-size: 24px;">arrow_back</span>
+</button>
+<div class="flex flex-col items-center">
+<h2 class="text-lg font-bold text-text-main dark:text-white tracking-tight">To: Alex ❤️</h2>
+</div>
+<div class="w-10"></div> <!-- Spacer for balance -->
+</div>
+<!-- Context Chips & Toggles -->
+<div class="flex items-center justify-between">
+<!-- Chip -->
+<div class="flex h-8 items-center gap-x-2 rounded-full bg-white dark:bg-surface-dark pl-3 pr-4 shadow-sm border border-black/5 dark:border-white/5">
+<span class="material-symbols-outlined text-primary text-[18px]">park</span>
+<span class="text-xs font-semibold text-text-main dark:text-white">Our Garden</span>
+</div>
+<!-- Surprise Mode Toggle -->
+<div class="flex items-center gap-2">
+<span class="text-xs font-medium text-text-subtle dark:text-white/60">Surprise Mode</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</header>
+<!-- Tabs Navigation -->
+<div class="flex-none px-4 pt-2 pb-1 z-10">
+<div class="flex p-1 bg-white dark:bg-surface-dark rounded-full shadow-sm border border-black/5 dark:border-white/5 relative">
+<!-- Active Indicator (Simulated with absolute positioning for demo, typically JS controlled) -->
+<div class="absolute left-1 top-1 bottom-1 w-[32%] bg-primary rounded-full shadow-md z-0 opacity-10"></div>
+<button class="flex-1 relative z-10 py-2.5 flex flex-col items-center justify-center text-primary font-bold text-sm transition-all">
+<span>Text</span>
+</button>
+<button class="flex-1 relative z-10 py-2.5 flex flex-col items-center justify-center text-text-subtle dark:text-white/60 font-medium text-sm transition-all hover:text-text-main dark:hover:text-white">
+<span>Handwrite</span>
+</button>
+<button class="flex-1 relative z-10 py-2.5 flex flex-col items-center justify-center text-text-subtle dark:text-white/60 font-medium text-sm transition-all hover:text-text-main dark:hover:text-white">
+<span>Voice</span>
+</button>
+</div>
+</div>
+<!-- Main Content Area (Scrollable) -->
+<main class="flex-1 overflow-y-auto no-scrollbar relative p-4 pb-24">
+<!-- Text Tab Content (Active) -->
+<div class="flex flex-col h-full gap-4">
+<!-- Paper Text Area -->
+<div class="relative group flex-1 min-h-[300px]">
+<div class="absolute inset-0 bg-white dark:bg-surface-dark rounded-2xl shadow-card transform transition-transform group-hover:scale-[1.01] border border-black/5 dark:border-white/5"></div>
+<!-- Paper Texture/Lines -->
+<div class="absolute inset-0 rounded-2xl opacity-50 pointer-events-none" style="background-image: repeating-linear-gradient(transparent, transparent 31px, #e7cfd5 31px, #e7cfd5 32px); top: 32px; background-attachment: local;">
+</div>
+<textarea class="relative w-full h-full bg-transparent border-none resize-none p-6 pt-10 text-lg leading-[32px] text-text-main dark:text-white placeholder:text-text-subtle/50 focus:ring-0 font-display" placeholder="Write something sweet for Alex..."></textarea>
+<!-- Formatting Toolbar Floating inside -->
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+<!-- Font Toggle -->
+<div class="flex bg-background-light dark:bg-background-dark p-1 rounded-full shadow-sm border border-black/5 dark:border-white/5 gap-1">
+<button class="w-8 h-8 rounded-full bg-white dark:bg-surface-dark shadow-sm flex items-center justify-center text-xs font-bold text-text-main dark:text-white">Aa</button>
+<button class="w-8 h-8 rounded-full hover:bg-black/5 dark:hover:bg-white/10 flex items-center justify-center text-xs italic font-serif text-text-subtle">Aa</button>
+</div>
+<!-- Theme Picker -->
+<div class="flex gap-2 p-1.5 bg-background-light dark:bg-background-dark rounded-full shadow-sm border border-black/5 dark:border-white/5">
+<button class="w-6 h-6 rounded-full bg-white border border-gray-200 ring-2 ring-primary ring-offset-1"></button>
+<button class="w-6 h-6 rounded-full bg-pink-100 hover:scale-110 transition-transform"></button>
+<button class="w-6 h-6 rounded-full bg-gradient-to-br from-pink-200 to-rose-200 hover:scale-110 transition-transform"></button>
+</div>
+</div>
+</div>
+<!-- Hidden Handwrite Preview (Visual placeholder for concept) -->
+<!-- 
+                <div class="hidden flex-col items-center justify-center h-full bg-white dark:bg-surface-dark rounded-2xl border-2 border-dashed border-gray-200 dark:border-white/10 p-8 gap-4">
+                    <img src="https://placehold.co/200x150/png" alt="Handwriting preview" class="opacity-50 grayscale" data-alt="Sketch preview placeholder">
+                    <button class="px-6 py-3 bg-gray-100 dark:bg-white/10 rounded-full font-bold text-text-main dark:text-white">Open Canvas</button>
+                </div>
+                -->
+<!-- Hidden Voice Interface (Visual placeholder for concept) -->
+<!--
+                <div class="hidden flex-col items-center justify-center h-full gap-8">
+                    <div class="w-32 h-32 rounded-full bg-primary/10 flex items-center justify-center relative">
+                         <div class="absolute w-full h-full rounded-full border-4 border-primary/20 animate-ping"></div>
+                         <span class="material-symbols-outlined text-primary text-5xl">mic</span>
+                    </div>
+                    <p class="text-text-subtle font-medium">Hold to record</p>
+                </div>
+                -->
+</div>
+</main>
+<!-- Bottom Actions Bar -->
+<footer class="flex-none bg-white/80 dark:bg-background-dark/80 backdrop-blur-lg border-t border-black/5 dark:border-white/5 p-4 pb-8 z-30">
+<div class="flex items-center gap-4">
+<!-- Time Capsule Button -->
+<button class="flex flex-col items-center justify-center w-12 h-12 rounded-2xl bg-gray-100 dark:bg-white/5 text-text-subtle hover:bg-gray-200 dark:hover:bg-white/10 transition-colors group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">schedule</span>
+</button>
+<!-- Primary Send Button -->
+<button class="flex-1 h-14 bg-primary hover:bg-primary/90 active:scale-95 transition-all rounded-full flex items-center justify-center gap-2 shadow-soft group relative overflow-hidden">
+<span class="relative z-10 text-white font-bold text-lg tracking-wide">Send Note</span>
+<span class="material-symbols-outlined text-white relative z-10 group-hover:translate-x-1 transition-transform">send</span>
+<!-- Subtle gradient overlay -->
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+</button>
+<!-- Save Favorite Toggle -->
+<div class="flex flex-col items-center justify-center w-12 h-12">
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" type="checkbox"/>
+<div class="w-12 h-12 flex items-center justify-center rounded-2xl bg-gray-100 dark:bg-white/5 peer-checked:bg-pink-100 dark:peer-checked:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-gray-400 dark:text-white/40 peer-checked:text-primary peer-checked:fill-current transition-colors text-2xl group-hover:scale-110 duration-200">favorite</span>
+</div>
+</label>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

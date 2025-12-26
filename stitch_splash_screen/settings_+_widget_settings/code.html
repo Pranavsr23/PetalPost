@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings - PetalPost</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ee2b5b",
+              "background-light": "#f8f6f6",
+              "background-dark": "#221015",
+              "surface-light": "#ffffff",
+              "surface-dark": "#361b22", // A slightly lighter shade of the dark background
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "1rem", 
+              "sm": "0.5rem",
+              "md": "0.75rem",
+              "lg": "1.5rem", 
+              "xl": "2rem", 
+              "full": "9999px"
+            },
+            boxShadow: {
+                'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar hiding */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl">
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-200/50 dark:border-white/5">
+<div class="flex items-center px-4 py-3 justify-between">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-[20px]">arrow_back_ios_new</span>
+</button>
+<h2 class="text-xl font-bold tracking-tight text-center flex-1 pr-10">Settings</h2>
+</div>
+</header>
+<main class="flex-1 pb-8">
+<!-- Section: Widget Configuration -->
+<div class="px-4 pt-6 pb-2">
+<h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 ml-4 mb-3">Widget Configuration</h3>
+<!-- Widget Preview Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded p-4 mb-4 shadow-soft">
+<div class="flex flex-col items-center">
+<div class="relative w-full aspect-[2/1] rounded-lg overflow-hidden mb-4 bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900 dark:to-purple-900 flex items-center justify-center" data-alt="Blurred abstract background gradient representing a phone wallpaper" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDwT-W63mGtgRwRUCJA-gSl8eY1n5Jg3S0mTr3OY8wBrAsRRbsqzOu2akr1bhxDJNXufLY9W8uScve8RSayb0TXoqo6p0XUrFCsv-jA_7jgiC7D_REJth4gpwN7nZzf49j-0MYCElBmp25Eqj6Lm4NjBeawsiTPAWwwT_SL8Q9yBB7RrPP2DDbsNeezD3oLequUf-o-BHMyGZxmGDcLvQDCWzjrxZPPb9aa7VdEoMKFhj33g9GZqtzaAZzHOTJT4oBrk7yo5Dc2pkk'); background-size: cover; background-position: center;">
+<!-- The Widget Mockup -->
+<div class="w-32 h-32 bg-white dark:bg-gray-900/90 backdrop-blur rounded-[1.2rem] shadow-xl flex flex-col items-center justify-center p-3 text-center transform scale-110">
+<span class="material-symbols-outlined text-primary text-[28px] mb-1">favorite</span>
+<p class="text-[10px] font-bold text-gray-800 dark:text-gray-100">Love Note</p>
+<p class="text-[8px] text-gray-500 dark:text-gray-400 leading-tight mt-1 line-clamp-2">Can't wait to see you tonight! 🌹</p>
+</div>
+<div class="absolute bottom-2 right-2 bg-black/40 backdrop-blur-sm text-white text-[10px] px-2 py-0.5 rounded-full">
+                                Preview
+                            </div>
+</div>
+<div class="w-full">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-bold text-base">Widget Preview</h4>
+<span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">Live</span>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400">See how your love notes appear on the home screen.</p>
+</div>
+</div>
+</div>
+<!-- Widget Settings Group -->
+<div class="bg-surface-light dark:bg-surface-dark rounded overflow-hidden shadow-soft">
+<!-- Default Space -->
+<button class="w-full flex items-center justify-between p-4 bg-surface-light dark:bg-surface-dark hover:bg-gray-50 dark:hover:bg-white/5 transition-colors border-b border-gray-100 dark:border-white/5 group">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center rounded-full bg-primary/10 text-primary size-9 shrink-0">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</div>
+<span class="text-base font-medium text-slate-900 dark:text-white">Default Space</span>
+</div>
+<div class="flex items-center gap-2 text-gray-400 dark:text-gray-500 group-hover:text-primary transition-colors">
+<span class="text-sm text-gray-500 dark:text-gray-400">Our Love</span>
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</div>
+</button>
+<!-- Widget Mode -->
+<button class="w-full flex items-center justify-between p-4 bg-surface-light dark:bg-surface-dark hover:bg-gray-50 dark:hover:bg-white/5 transition-colors border-b border-gray-100 dark:border-white/5 group">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center rounded-full bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400 size-9 shrink-0">
+<span class="material-symbols-outlined text-[20px]">layers</span>
+</div>
+<span class="text-base font-medium text-slate-900 dark:text-white">Widget Mode</span>
+</div>
+<div class="flex items-center gap-2 text-gray-400 dark:text-gray-500 group-hover:text-primary transition-colors">
+<span class="text-sm text-gray-500 dark:text-gray-400">Latest Note</span>
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</div>
+</button>
+<!-- Blur Mode -->
+<div class="p-4 bg-surface-light dark:bg-surface-dark">
+<div class="flex items-center gap-3 mb-3">
+<div class="flex items-center justify-center rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 size-9 shrink-0">
+<span class="material-symbols-outlined text-[20px]">blur_on</span>
+</div>
+<span class="text-base font-medium text-slate-900 dark:text-white">Blur Content</span>
+</div>
+<!-- Segmented Control -->
+<div class="flex p-1 bg-gray-100 dark:bg-black/20 rounded-lg">
+<button class="flex-1 py-1.5 px-3 text-sm font-medium rounded-md shadow-sm bg-white dark:bg-white/10 text-primary dark:text-white transition-all">
+                                Always
+                            </button>
+<button class="flex-1 py-1.5 px-3 text-sm font-medium rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-all">
+                                New Only
+                            </button>
+<button class="flex-1 py-1.5 px-3 text-sm font-medium rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-all">
+                                Never
+                            </button>
+</div>
+<p class="text-xs text-gray-400 mt-2 ml-1">Controls when widget content is blurred for privacy.</p>
+</div>
+</div>
+</div>
+<!-- Section: General -->
+<div class="px-4 pt-4 pb-2">
+<h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 ml-4 mb-3">General</h3>
+<div class="bg-surface-light dark:bg-surface-dark rounded overflow-hidden shadow-soft">
+<!-- Notifications -->
+<button class="w-full flex items-center justify-between p-4 bg-surface-light dark:bg-surface-dark hover:bg-gray-50 dark:hover:bg-white/5 transition-colors border-b border-gray-100 dark:border-white/5 group">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center rounded-full bg-primary/10 text-primary size-9 shrink-0">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</div>
+<span class="text-base font-medium text-slate-900 dark:text-white">Notifications</span>
+</div>
+<div class="flex items-center gap-2 text-gray-400 dark:text-gray-500 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</div>
+</button>
+<!-- Privacy Lock -->
+<div class="w-full flex items-center justify-between p-4 bg-surface-light dark:bg-surface-dark border-b border-gray-100 dark:border-white/5">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400 size-9 shrink-0">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="text-base font-medium text-slate-900 dark:text-white">Privacy Lock</span>
+<span class="text-xs text-gray-500 dark:text-gray-400">Use Face ID</span>
+</div>
+</div>
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Manage Spaces -->
+<button class="w-full flex items-center justify-between p-4 bg-surface-light dark:bg-surface-dark hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400 size-9 shrink-0">
+<span class="material-symbols-outlined text-[20px]">diversity_1</span>
+</div>
+<span class="text-base font-medium text-slate-900 dark:text-white">Manage Spaces</span>
+</div>
+<div class="flex items-center gap-2 text-gray-400 dark:text-gray-500 group-hover:text-primary transition-colors">
+<span class="text-sm text-gray-500 dark:text-gray-400">1 Active</span>
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Section: Support -->
+<div class="px-4 pt-4 pb-8">
+<h3 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 ml-4 mb-3">Support</h3>
+<div class="bg-surface-light dark:bg-surface-dark rounded overflow-hidden shadow-soft mb-6">
+<!-- Help -->
+<button class="w-full flex items-center justify-between p-4 bg-surface-light dark:bg-surface-dark hover:bg-gray-50 dark:hover:bg-white/5 transition-colors border-b border-gray-100 dark:border-white/5 group">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center rounded-full bg-gray-100 text-gray-600 dark:bg-white/10 dark:text-gray-300 size-9 shrink-0">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</div>
+<span class="text-base font-medium text-slate-900 dark:text-white">Help &amp; Support</span>
+</div>
+<div class="flex items-center gap-2 text-gray-400 dark:text-gray-500 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</div>
+</button>
+<!-- Rate App (Extra Idea) -->
+<button class="w-full flex items-center justify-between p-4 bg-surface-light dark:bg-surface-dark hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center rounded-full bg-yellow-100 text-yellow-600 dark:bg-yellow-900/30 dark:text-yellow-400 size-9 shrink-0">
+<span class="material-symbols-outlined text-[20px]">star</span>
+</div>
+<span class="text-base font-medium text-slate-900 dark:text-white">Rate PetalPost</span>
+</div>
+<div class="flex items-center gap-2 text-gray-400 dark:text-gray-500 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</div>
+</button>
+</div>
+<!-- Footer / Destructive -->
+<div class="flex flex-col items-center gap-4 mt-8">
+<button class="text-base font-medium text-red-500 hover:text-red-600 transition-colors py-2 px-4 rounded-full hover:bg-red-50 dark:hover:bg-red-900/20">
+                        Delete Account
+                    </button>
+<p class="text-xs text-gray-400">Version 2.4.0 (Build 184)</p>
+</div>
+</div>
+</main>
+<!-- Bottom Tab Bar Placeholder (Visual Context) -->
+<nav class="sticky bottom-0 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md border-t border-gray-200/50 dark:border-white/5 px-6 py-3 flex justify-between items-center z-40">
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined fill-current">settings</span>
+</div>
+</nav>
+</div>
+</body></html>

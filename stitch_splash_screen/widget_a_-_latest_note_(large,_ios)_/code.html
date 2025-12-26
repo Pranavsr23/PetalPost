@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PetalPost iOS Widgets</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "primary-light": "#f3e7ea",
+                        "text-dark": "#1b0d11",
+                        "text-muted": "#9a4c5f",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "widget": "2rem", // iOS roughly 32px
+                        "inner": "1.2rem",
+                    },
+                    boxShadow: {
+                        "widget": "0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 10px -2px rgba(0, 0, 0, 0.01)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar hiding if needed */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#f2f2f7] min-h-screen font-display flex flex-col items-center justify-center p-8">
+<div class="text-center mb-10 max-w-2xl mx-auto">
+<h1 class="text-3xl font-bold text-text-dark mb-2">PetalPost Widgets</h1>
+<p class="text-text-muted">iOS Large Widget Variants (SystemLarge)</p>
+</div>
+<!-- Grid Layout for Presentation -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 w-full max-w-[1400px]">
+<!-- VARIANT 1: SURPRISE / BLURRED -->
+<div class="relative w-full max-w-[340px] aspect-[1/1.1] mx-auto bg-white rounded-widget shadow-widget overflow-hidden flex flex-col group/widget">
+<!-- Background Image -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Abstract colorful gradient representing a hidden surprise" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDlB_tuYpexoEyPu6S8A8MxZpogjXpp0thz-Ff24FJ22R-lJbckPo6Xf58Tux9Lg8R73AGZfkWCLTeeWnhUg8RCsP0SS7IBgkLHLokOR3rAUZS41UZDVJQV2A1ZiBuaDy6mWKw5H1TVOKYGDO32b0gnCwplgJlmmEkuCfttdmVnSLAErfTcFI1QD0q_4Atr2GLTVbjOX7unqu2mmz8sl5H37293A7Rcm0xqcmaYM8JK0gDQ5iROp_0lAk2izwmzOupL_qly7jVqRUc");'>
+</div>
+<!-- Blur Overlay -->
+<div class="absolute inset-0 backdrop-blur-xl bg-white/40"></div>
+<!-- Header -->
+<div class="relative z-10 flex items-center justify-between p-5 pb-0">
+<div class="flex items-center gap-3">
+<img alt="Partner Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm" data-alt="Portrait of a woman smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz4gBDf3Uvd_2ysRBGKjTYwb5uTYUYl1wLxZMpNbB6c8qmyWFuo4voKYlKObDf4iOU3UN2DsmApKgcJLqHqAyws6XNXRDu6QuVJQVGRxeEt2ymOnTSSZ95uzsfs6xSCzXBW90PIsnIw2yHMSGXHNc34wJUjciYhJn7BfG567UeZGWgrPpdctGb9BvtkskJ8mn4HpnpuSHhbmS1u8-CNdqXhSnXi5E44bT0TWUFia7B2NS5foqZ0WP48Z3BKzbgos8VFn_gx7tF2j8"/>
+<div>
+<p class="text-text-dark font-bold text-lg leading-tight">Alex</p>
+<p class="text-text-dark/70 text-xs font-medium">Partner</p>
+</div>
+</div>
+<!-- Mini App Icon -->
+<div class="w-7 h-7 bg-primary rounded-[8px] flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-white text-[16px]">local_florist</span>
+</div>
+</div>
+<!-- Content Area -->
+<div class="relative z-10 flex-1 flex flex-col items-center justify-center p-6 text-center gap-4">
+<div class="bg-white/60 backdrop-blur-md p-4 rounded-2xl border border-white/50 shadow-sm w-full">
+<span class="material-symbols-outlined text-primary text-4xl mb-2">redeem</span>
+<p class="text-text-dark text-xl font-bold leading-tight tracking-tight mb-1">Alex sent a surprise!</p>
+<p class="text-text-dark/80 text-sm">Tap to see what's inside</p>
+</div>
+<button class="flex w-full cursor-pointer items-center justify-center rounded-full h-12 px-6 bg-primary text-white text-base font-bold shadow-lg shadow-primary/30 transition-transform active:scale-95">
+                    Tap to reveal
+                </button>
+</div>
+<!-- Footer -->
+<div class="relative z-10 p-5 pt-0 flex justify-end">
+<p class="text-text-dark/60 text-xs font-medium">Updated 1m ago</p>
+</div>
+</div>
+<!-- VARIANT 2: LOCKED / TIME CAPSULE -->
+<div class="relative w-full max-w-[340px] aspect-[1/1.1] mx-auto bg-background-dark rounded-widget shadow-widget overflow-hidden flex flex-col">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Night sky with stars representing a time capsule" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQPW9yRiebWDQbaMVHAGlg8I5GRn45fkDV_yiEiZeb5eVnDYSy_QlFlfVV9wmoCpfx4nc74mR6h5y4aWRs9P4Iehdsly843RdIvGYPK9zAn3dIASBK7-as9WB0oPYd0t0Y8Mj0oMREPxtq4Zrv-pJOB0OnH7UX-qWilNC7yxGjGdrXvpgWI_W4PR8JfgfkEcPElvd_pxwGahuy44iCXxy2MyNccvMZTh8v9776b09VbYjPQxi6xGqugXfoxab4dGtezGUca9VHxHw");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/80"></div>
+<!-- Header -->
+<div class="relative z-10 flex items-center justify-between p-5 pb-0">
+<div class="flex items-center gap-3">
+<img alt="Partner Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-white/20 shadow-sm" data-alt="Portrait of a woman smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEEEhRXrjXuQ7hzvqpcyZz4YJQFHeLDpPcjuuIBs0ceIo9iWsTKJqU0_HeVTx_ElD4YDUapCnkAxnnUb7Rd69Aj_HLjViBeo-jzNk9-76N_vd5D5jYED6YvWVHA5M3NZO3hspRektIsx9bGjhYYxHds0le33GEuPu84Z_cw9KIJt_LVF2rVP8e-2gNea1Mek2mHEq-D_OGqpF7l47XOHznHq-bnFJHHp0kD-fNELu0Dw9CwXAtd79bY-8-Mktq7aGkh0i9m2wHUu4"/>
+<div>
+<p class="text-white font-bold text-lg leading-tight">Alex</p>
+<p class="text-white/70 text-xs font-medium">Partner</p>
+</div>
+</div>
+<!-- Mini App Icon -->
+<div class="w-7 h-7 bg-white/20 backdrop-blur-sm rounded-[8px] flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-white text-[16px]">local_florist</span>
+</div>
+</div>
+<!-- Content Area -->
+<div class="relative z-10 flex-1 flex flex-col items-center justify-end p-6 pb-2 text-center gap-6">
+<div class="flex flex-col items-center gap-3">
+<div class="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
+<span class="material-symbols-outlined text-white text-3xl">lock</span>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-white text-2xl font-bold tracking-tight">Time Capsule</p>
+<p class="text-white/80 text-sm font-medium bg-black/30 px-3 py-1 rounded-full backdrop-blur-sm">Opens Friday at 9:00 AM</p>
+</div>
+</div>
+<button class="flex w-full cursor-not-allowed items-center justify-center rounded-full h-12 px-6 bg-white/10 border border-white/10 text-white/50 text-base font-bold backdrop-blur-sm">
+<span class="material-symbols-outlined text-[18px] mr-2">lock_clock</span>
+                    Locked
+                </button>
+</div>
+<!-- Footer -->
+<div class="relative z-10 p-5 flex justify-end">
+<p class="text-white/40 text-xs font-medium">Updated 5m ago</p>
+</div>
+</div>
+<!-- VARIANT 3: VOICE NOTE -->
+<div class="relative w-full max-w-[340px] aspect-[1/1.1] mx-auto bg-white rounded-widget shadow-widget overflow-hidden flex flex-col">
+<!-- Header -->
+<div class="flex items-center justify-between p-5 pb-0">
+<div class="flex items-center gap-3">
+<img alt="Partner Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-primary-light shadow-sm" data-alt="Portrait of a woman smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOX2OhxFlDsIrXXGGfxxydf78t3GvRqmvD7HcFDU6-lgeI6VWwHgueszg_WsYXXsmccyRCdCuHGSml43rI0apQ9VSnBNMUovFs3w7d1guxg1pJBUaiJTIlSZfuhWLk2jNdYOXlP7QzJeyURk23R2A1zQY9Lg_4l1hwGO022z8wTr03MpnK8FUjoYr_xDG4QbUw5L_mC7rlxG-8Eis0gSkvLZfCYtMoJnOTHcissKUD6SgN7qwns-suyF7MdNkkijold3Cisdmaag4"/>
+<div>
+<p class="text-text-dark font-bold text-lg leading-tight">Alex</p>
+<p class="text-text-muted text-xs font-medium">Partner</p>
+</div>
+</div>
+<!-- Mini App Icon -->
+<div class="w-7 h-7 bg-primary rounded-[8px] flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-white text-[16px]">local_florist</span>
+</div>
+</div>
+<!-- Content Area -->
+<div class="flex-1 flex flex-col justify-center p-6 gap-6">
+<div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-primary-light text-primary rounded-full text-xs font-bold mb-3">
+<span class="material-symbols-outlined text-[14px]">headphones</span>
+                        New Voice Note
+                    </span>
+<h2 class="text-text-dark text-3xl font-extrabold tracking-tight">Listen now</h2>
+</div>
+<!-- Visual Waveform Container -->
+<div class="flex items-center gap-1.5 h-16 w-full justify-start">
+<!-- Generating a fake waveform with bars -->
+<div class="w-2 bg-primary rounded-full h-[30%] opacity-40"></div>
+<div class="w-2 bg-primary rounded-full h-[50%] opacity-60"></div>
+<div class="w-2 bg-primary rounded-full h-[80%]"></div>
+<div class="w-2 bg-primary rounded-full h-[100%]"></div>
+<div class="w-2 bg-primary rounded-full h-[60%]"></div>
+<div class="w-2 bg-primary rounded-full h-[40%] opacity-70"></div>
+<div class="w-2 bg-primary rounded-full h-[70%]"></div>
+<div class="w-2 bg-primary rounded-full h-[90%]"></div>
+<div class="w-2 bg-primary rounded-full h-[50%] opacity-60"></div>
+<div class="w-2 bg-primary rounded-full h-[30%] opacity-40"></div>
+<div class="w-2 bg-primary rounded-full h-[60%]"></div>
+<div class="w-2 bg-primary rounded-full h-[20%] opacity-30"></div>
+<div class="w-2 bg-primary rounded-full h-[40%] opacity-50"></div>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-text-dark font-bold text-lg">1:32</p>
+<button class="flex cursor-pointer items-center justify-center rounded-full w-14 h-14 bg-primary text-white shadow-lg shadow-primary/30 transition-transform active:scale-95 hover:bg-red-600">
+<span class="material-symbols-outlined text-3xl pl-1">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Footer -->
+<div class="p-5 pt-0 flex justify-end">
+<p class="text-text-muted text-xs font-medium">Updated 2m ago</p>
+</div>
+</div>
+<!-- VARIANT 4: EMPTY STATE -->
+<div class="relative w-full max-w-[340px] aspect-[1/1.1] mx-auto bg-white rounded-widget shadow-widget overflow-hidden flex flex-col">
+<!-- Header -->
+<div class="flex items-center justify-between p-5 pb-0">
+<div class="flex items-center gap-3">
+<img alt="Partner Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-primary-light shadow-sm" data-alt="Portrait of a woman smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT3sCnnYUGgrZlx6t_oTEc2D6aze865buslG9nMiPhSoiAcRahM_JdnwvXRMSE_ZHttLPHNoHjbOCL37-nQB5a40-V3M9Yf3hxNwnQbMeiouofc6Am1tYp-DQec06kpTu_X7pvyMSqfoMGBXYHpfp5ApUG3OZOpZzpcFjys_pfkrIE8NQtK0RdwsaLCiXHJa-sjKDmxrjMIf5xRODTdWMNzKqHmuuXBq_tomQ7kuHklFmrrUWA-nOAxr3VF3c0TF5FXT0mvP4BhRg"/>
+<div>
+<p class="text-text-dark font-bold text-lg leading-tight">Alex</p>
+<p class="text-text-muted text-xs font-medium">Partner</p>
+</div>
+</div>
+<!-- Mini App Icon -->
+<div class="w-7 h-7 bg-primary rounded-[8px] flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-white text-[16px]">local_florist</span>
+</div>
+</div>
+<!-- Content Area -->
+<div class="flex-1 flex flex-col p-5">
+<div class="flex-1 flex flex-col items-center justify-center gap-4 rounded-inner border-2 border-dashed border-primary/20 bg-background-light px-4">
+<div class="relative w-20 h-20 mb-2">
+<!-- Decorative shapes behind icon -->
+<div class="absolute top-0 right-0 w-16 h-16 bg-primary/10 rounded-full animate-pulse"></div>
+<div class="absolute bottom-0 left-0 w-12 h-12 bg-blue-100 rounded-full"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-5xl transform -rotate-12">mail</span>
+</div>
+</div>
+<div class="text-center">
+<p class="text-text-dark text-lg font-bold leading-tight mb-1">Thinking of Alex?</p>
+<p class="text-text-muted text-sm leading-normal">Your inbox is empty. Be the first to send love!</p>
+</div>
+<button class="mt-2 flex w-full max-w-[200px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full h-10 px-4 bg-white border border-primary/20 text-primary text-sm font-bold shadow-sm transition hover:bg-primary hover:text-white">
+<span>Send a note</span>
+<span class="material-symbols-outlined text-base">favorite</span>
+</button>
+</div>
+</div>
+<!-- Footer -->
+<div class="p-5 pt-0 flex justify-end">
+<p class="text-text-muted text-xs font-medium">Updated just now</p>
+</div>
+</div>
+</div>
+</body></html>

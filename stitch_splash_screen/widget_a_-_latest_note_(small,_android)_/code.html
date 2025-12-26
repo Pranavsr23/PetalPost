@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PetalPost Widgets</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for better presentation */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-white transition-colors duration-300 min-h-screen flex items-center justify-center py-10">
+<div class="flex flex-col items-center gap-8 w-full max-w-6xl px-4">
+<div class="text-center space-y-2">
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">PetalPost Widgets</h1>
+<p class="text-slate-500 dark:text-slate-400">Android Home Screen Widget Variations (Small 2x2)</p>
+</div>
+<!-- Phone Simulator Container -->
+<div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-900 border-[14px] rounded-[2.5rem] h-[800px] w-[375px] shadow-2xl flex flex-col overflow-hidden ring-8 ring-slate-900/10">
+<!-- Simulated Wallpaper -->
+<div class="absolute inset-0 w-full h-full z-0 bg-cover bg-center" data-alt="Abstract soft pink and purple gradient wallpaper" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1KLIxkoyJ_APk3jotsA8MNyCIELhYcLWm5WanhQ_NWgYj-HP11NYE-MCbAEcj3a1L4I9gc7YqHiEtmh8w2JpUlPhY5Ur8F7KN-Bndno2ugxEEtb2oRYyDj0YsMmH4ubccj9XEH31uC23-Aa3rf5XTdwCdSqXd5Is8I9Vp7yf0u8whc5eK-1p2ruSv5n5JaKOZ1YGer2y8CyKiLtu8yCwJicG713VY2S_S2k3rDArpc4ozi_nE9D51KSGE8nge6Qnv9NHPW547Ta0'); opacity: 0.9;"></div>
+<div class="absolute inset-0 bg-black/10 z-0"></div>
+<!-- Status Bar -->
+<div class="h-8 w-full z-10 flex justify-between items-center px-6 mt-3 text-white text-xs font-medium">
+<span>9:41</span>
+<div class="flex gap-1.5 items-center">
+<span class="material-symbols-outlined text-[16px]">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[16px]">wifi</span>
+<span class="material-symbols-outlined text-[16px]">battery_full</span>
+</div>
+</div>
+<!-- Home Screen Grid -->
+<div class="flex-1 z-10 p-5 flex flex-col gap-6 overflow-y-auto pb-20">
+<!-- Date/Weather Widget Placeholder (Context) -->
+<div class="flex justify-between items-center px-2 pt-8 mb-4">
+<div class="flex flex-col text-white/90 drop-shadow-md">
+<span class="text-5xl font-light tracking-tighter">10:24</span>
+<span class="text-sm font-medium opacity-90">Tue, Oct 24</span>
+</div>
+<div class="flex flex-col items-end text-white/90 drop-shadow-md">
+<span class="material-symbols-outlined text-3xl">partly_cloudy_day</span>
+<span class="text-sm font-medium">68°F</span>
+</div>
+</div>
+<!-- WIDGET ROW 1: Surprise & Locked -->
+<div class="grid grid-cols-2 gap-4">
+<!-- 1. Surprise State Widget -->
+<div class="aspect-square relative flex flex-col justify-between p-4 rounded-[2rem] overflow-hidden group active:scale-95 transition-transform duration-200 shadow-lg">
+<!-- Background Image -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Blurred romantic photo of a couple" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJaF54bqCI9mqUIYBWox6eOf49t_ASuOE47vPR3PP8_GJO24G8QA3kP1L3fQI9XjuuyP_7sjAII6V8wjlOTm8qsoWdL4KdN6TeEwBEO01_oWEWuj5hGRE961T3d6ATUEddVhYYhnlP-CBxa6s7IkeZD_0TbSKuet6zJ6efHw7AtTMAs7sQNKQnpf9d2SS1xqdcSyVDcxerMOMJr8CLsseP7aIQgWdNSx39dEL-jVAxmpZLcLhMyZnj-LWq07qM_NPMxO9a0rHV85c'); filter: blur(8px) brightness(0.7); transform: scale(1.2);"></div>
+<!-- Header -->
+<div class="relative z-10 flex justify-start">
+<div class="bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-white text-[10px]">favorite</span>
+<span class="text-white text-[10px] font-bold leading-none tracking-wide uppercase">Alex</span>
+</div>
+</div>
+<!-- Content -->
+<div class="relative z-10 flex flex-col items-center justify-center gap-1 mt-1">
+<div class="w-10 h-10 rounded-full bg-primary/90 text-white flex items-center justify-center shadow-lg animate-pulse">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</div>
+<p class="text-white text-base font-bold text-center leading-tight drop-shadow-md mt-1">Tap to<br/>reveal</p>
+</div>
+<!-- Footer -->
+<div class="relative z-10 flex justify-center">
+<span class="text-white/80 text-[10px] font-medium bg-black/20 px-2 py-0.5 rounded-full backdrop-blur-sm">2m ago</span>
+</div>
+</div>
+<!-- 2. Locked State Widget -->
+<div class="aspect-square relative flex flex-col justify-between p-4 rounded-[2rem] overflow-hidden bg-slate-900 group active:scale-95 transition-transform duration-200 shadow-lg border border-white/5">
+<!-- Background Texture -->
+<div class="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-950 opacity-100"></div>
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-[40px] -translate-y-1/2 translate-x-1/2"></div>
+<!-- Header -->
+<div class="relative z-10 flex justify-start">
+<div class="bg-slate-700/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/5 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[10px]">lock_clock</span>
+<span class="text-slate-200 text-[10px] font-bold leading-none tracking-wide uppercase">Capsule</span>
+</div>
+</div>
+<!-- Content -->
+<div class="relative z-10 flex flex-col items-start gap-1">
+<span class="material-symbols-outlined text-slate-400 text-3xl mb-1">lock</span>
+<p class="text-white text-lg font-bold leading-tight">Opens<br/>Friday</p>
+</div>
+<!-- Footer -->
+<div class="relative z-10 flex items-center gap-1 text-slate-400">
+<span class="text-[10px]">Wait for it...</span>
+</div>
+</div>
+</div>
+<!-- WIDGET ROW 2: Voice & Empty -->
+<div class="grid grid-cols-2 gap-4">
+<!-- 3. Voice Note Widget -->
+<div class="aspect-square relative flex flex-col justify-between p-4 rounded-[2rem] overflow-hidden bg-white group active:scale-95 transition-transform duration-200 shadow-lg">
+<!-- Background -->
+<div class="absolute inset-0 bg-gradient-to-br from-primary to-[#ff5c8d]"></div>
+<!-- Waveform Graphic (Simulated) -->
+<div class="absolute bottom-0 left-0 right-0 h-24 opacity-30 flex items-end justify-center gap-1 pb-4 px-4">
+<div class="w-1 bg-white h-4 rounded-full"></div>
+<div class="w-1 bg-white h-8 rounded-full"></div>
+<div class="w-1 bg-white h-6 rounded-full"></div>
+<div class="w-1 bg-white h-10 rounded-full"></div>
+<div class="w-1 bg-white h-5 rounded-full"></div>
+<div class="w-1 bg-white h-3 rounded-full"></div>
+<div class="w-1 bg-white h-7 rounded-full"></div>
+<div class="w-1 bg-white h-4 rounded-full"></div>
+</div>
+<!-- Header -->
+<div class="relative z-10 flex justify-start">
+<div class="bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-white text-[10px]">mic</span>
+<span class="text-white text-[10px] font-bold leading-none tracking-wide uppercase">Voice</span>
+</div>
+</div>
+<!-- Content -->
+<div class="relative z-10 flex flex-col gap-0.5">
+<div class="flex items-center gap-2 mb-1">
+<div class="w-8 h-8 rounded-full bg-white text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-lg">play_arrow</span>
+</div>
+<span class="text-white text-2xl font-bold tracking-tight">0:42</span>
+</div>
+<p class="text-white/90 text-sm font-medium leading-tight">New message from Alex</p>
+</div>
+<!-- Footer -->
+<div class="relative z-10 flex justify-end">
+<span class="material-symbols-outlined text-white/60 text-lg">headphones</span>
+</div>
+</div>
+<!-- 4. Empty State Widget -->
+<div class="aspect-square relative flex flex-col justify-between p-4 rounded-[2rem] overflow-hidden bg-[#fcf8f9] group active:scale-95 transition-transform duration-200 shadow-lg border border-white/40">
+<!-- Header -->
+<div class="relative z-10 flex justify-start">
+<div class="bg-primary/10 px-2.5 py-1 rounded-full flex items-center gap-1.5">
+<span class="text-primary text-[10px] font-bold leading-none tracking-wide uppercase">PetalPost</span>
+</div>
+</div>
+<!-- Content -->
+<div class="relative z-10 flex flex-col items-center text-center mt-2">
+<div class="w-12 h-12 rounded-full bg-primary/5 border border-primary/10 text-primary flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-2xl">edit_note</span>
+</div>
+<p class="text-slate-800 text-sm font-bold leading-tight">Your turn</p>
+<p class="text-slate-500 text-xs font-medium leading-tight mt-0.5">Send a note 💌</p>
+</div>
+<!-- Decorative element -->
+<div class="absolute -bottom-6 -right-6 w-20 h-20 bg-primary/5 rounded-full"></div>
+</div>
+</div>
+<!-- App Icons (Fillers) -->
+<div class="grid grid-cols-4 gap-x-4 gap-y-6 mt-2 px-2">
+<div class="flex flex-col items-center gap-1">
+<div class="w-[56px] h-[56px] rounded-[18px] bg-indigo-500 flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-white text-3xl">mail</span>
+</div>
+<span class="text-white text-[10px] drop-shadow">Mail</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-[56px] h-[56px] rounded-[18px] bg-emerald-500 flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-white text-3xl">chat</span>
+</div>
+<span class="text-white text-[10px] drop-shadow">Chat</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-[56px] h-[56px] rounded-[18px] bg-slate-800 flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-white text-3xl">photo_camera</span>
+</div>
+<span class="text-white text-[10px] drop-shadow">Camera</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-[56px] h-[56px] rounded-[18px] bg-orange-400 flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-white text-3xl">music_note</span>
+</div>
+<span class="text-white text-[10px] drop-shadow">Music</span>
+</div>
+</div>
+</div>
+<!-- Navigation Bar (Android style) -->
+<div class="h-6 w-full absolute bottom-2 flex items-center justify-center z-20">
+<div class="w-16 h-1 bg-white/50 rounded-full"></div>
+</div>
+</div>
+<!-- Legend for States -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-[800px] mt-4">
+<div class="flex flex-col gap-2">
+<h3 class="font-bold text-slate-800 dark:text-white">1. Surprise State</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400">Frosted overlay hides content until tapped. Prioritizes privacy and anticipation.</p>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="font-bold text-slate-800 dark:text-white">2. Locked State</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400">Time-release content. Shows lock icon and unlock schedule.</p>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="font-bold text-slate-800 dark:text-white">3. Voice Note</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400">Vibrant primary color background. Shows duration and play CTA.</p>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="font-bold text-slate-800 dark:text-white">4. Empty State</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400">Clean, light background inviting the user to initiate a new note.</p>
+</div>
+</div>
+</div>
+</body></html>

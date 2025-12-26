@@ -1,0 +1,12 @@
+Widget keys used with home_widget:
+- widget_space_id
+- widget_mode
+- widget_blur_mode
+- latest_note_preview
+- latest_note_sender
+- latest_note_at
+- latest_note_locked_until
+- latest_note_unread
+- anniversary_date
+- anniversary_days
+- anniversary_next_milestone

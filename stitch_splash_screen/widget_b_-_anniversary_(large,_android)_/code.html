@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PetalPost Anniversary Widget</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b5b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221015",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#361b22",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "2.5rem", "full": "9999px" },
+                    boxShadow: {
+                        'widget': '0 4px 20px rgba(0, 0, 0, 0.08)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom pattern specifically for the heart background to avoid base64 restriction */
+        .bg-pattern-hearts {
+            background-image: radial-gradient(#ee2b5b 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.08;
+        }
+        
+        /* Simulating Android Home Screen Wallpaper */
+        .android-wallpaper {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen font-display flex flex-col items-center justify-center p-4 md:p-8">
+<!-- Screen Title -->
+<div class="mb-10 text-center">
+<h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Widget Gallery</h1>
+<p class="text-gray-500 dark:text-gray-400">Large Home Screen Widgets (4x4) · Active &amp; Empty States</p>
+</div>
+<!-- Widgets Container -->
+<div class="flex flex-col xl:flex-row gap-8 w-full max-w-6xl items-center justify-center">
+<!-- WIDGET VARIANT A: ACTIVE STATE -->
+<div class="relative group">
+<!-- Android Phone Mockup Frame (Simplistic) -->
+<div class="absolute -inset-4 bg-gray-900/5 dark:bg-white/5 rounded-[3rem] blur-xl -z-10"></div>
+<div class="w-[340px] h-[340px] sm:w-[380px] sm:h-[380px] relative rounded-[2rem] bg-white dark:bg-surface-dark shadow-widget overflow-hidden flex flex-col">
+<!-- Background Decoration (Hearts) -->
+<div class="absolute inset-0 pointer-events-none opacity-[0.06] flex flex-wrap content-between justify-between p-4 z-0">
+<span class="material-symbols-outlined text-4xl text-primary transform -rotate-12">favorite</span>
+<span class="material-symbols-outlined text-2xl text-primary transform rotate-12 mt-12">favorite</span>
+<span class="material-symbols-outlined text-5xl text-primary transform -rotate-6 ml-10">favorite</span>
+<span class="material-symbols-outlined text-3xl text-primary transform rotate-45">favorite</span>
+<span class="material-symbols-outlined text-6xl text-primary transform -rotate-12 opacity-50 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">favorite</span>
+<span class="material-symbols-outlined text-4xl text-primary transform rotate-12 self-end">favorite</span>
+<span class="material-symbols-outlined text-2xl text-primary transform -rotate-12 mb-8">favorite</span>
+</div>
+<!-- Widget Header -->
+<div class="relative z-10 flex justify-between items-center px-6 pt-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">local_florist</span>
+<span class="text-primary font-bold text-sm tracking-wide">PetalPost</span>
+</div>
+<!-- Settings Icon (Typical for widgets) -->
+<button class="text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</div>
+<!-- Widget Main Content -->
+<div class="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 -mt-2">
+<!-- Hero Number -->
+<h1 class="text-primary text-[6.5rem] leading-[1] font-extrabold tracking-tighter drop-shadow-sm">
+                        402
+                    </h1>
+<!-- Label -->
+<p class="text-gray-600 dark:text-gray-300 text-lg font-medium mt-1">
+                        Days Loving You
+                    </p>
+</div>
+<!-- Widget Footer / Badge -->
+<div class="relative z-10 px-6 pb-8 flex justify-center w-full">
+<div class="bg-primary/10 dark:bg-primary/20 backdrop-blur-sm border border-primary/10 rounded-full px-5 py-3 flex items-center gap-3 w-full justify-center">
+<span class="text-xl">🎉</span>
+<div class="flex flex-col items-start text-left">
+<span class="text-primary dark:text-white text-xs font-bold uppercase tracking-wider opacity-80">Next Milestone</span>
+<span class="text-gray-900 dark:text-white text-sm font-bold truncate">2nd Anniversary in 14 days</span>
+</div>
+</div>
+</div>
+</div>
+<p class="text-center mt-4 text-sm font-medium text-gray-400 uppercase tracking-widest">Active State</p>
+</div>
+<!-- WIDGET VARIANT B: EMPTY STATE -->
+<div class="relative group">
+<!-- Android Phone Mockup Frame (Simplistic) -->
+<div class="absolute -inset-4 bg-gray-900/5 dark:bg-white/5 rounded-[3rem] blur-xl -z-10"></div>
+<div class="w-[340px] h-[340px] sm:w-[380px] sm:h-[380px] relative rounded-[2rem] bg-white dark:bg-surface-dark shadow-widget overflow-hidden flex flex-col justify-between">
+<!-- Dotted border area to signify "Empty/Placeholder" -->
+<div class="absolute inset-4 border-2 border-dashed border-gray-200 dark:border-gray-700 rounded-[1.5rem] pointer-events-none"></div>
+<!-- Widget Header -->
+<div class="relative z-10 flex justify-end items-center px-6 pt-6">
+<span class="text-primary/40 font-bold text-sm tracking-wide">PetalPost</span>
+</div>
+<!-- Empty State Content -->
+<div class="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-8 gap-6">
+<!-- Icon Illustration -->
+<div class="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary/40 text-5xl">event_upcoming</span>
+</div>
+<div class="flex flex-col gap-2">
+<h2 class="text-gray-900 dark:text-white text-2xl font-bold leading-tight tracking-tight">
+                            When is your <br/>special day?
+                        </h2>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-relaxed max-w-[240px] mx-auto">
+                            Start tracking your love journey and celebrate every milestone together.
+                        </p>
+</div>
+<!-- CTA Button -->
+<button class="group flex items-center justify-center gap-2 w-full max-w-[220px] cursor-pointer rounded-full h-12 px-6 bg-primary hover:bg-rose-600 active:scale-95 transition-all duration-200 text-white text-sm font-bold shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-[1.25rem]">edit_calendar</span>
+<span>Set Anniversary Date</span>
+</button>
+</div>
+<!-- Spacer for bottom alignment visual balance -->
+<div class="h-6"></div>
+</div>
+<p class="text-center mt-4 text-sm font-medium text-gray-400 uppercase tracking-widest">Empty State</p>
+</div>
+</div>
+<!-- Toggle Dark Mode Button (For Demo Purposes) -->
+<div class="fixed bottom-6 right-6 z-50">
+<button class="bg-white dark:bg-gray-800 p-4 rounded-full shadow-lg border border-gray-200 dark:border-gray-700 hover:scale-110 transition-transform" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined text-gray-800 dark:text-white block dark:hidden">dark_mode</span>
+<span class="material-symbols-outlined text-white hidden dark:block">light_mode</span>
+</button>
+</div>
+</body></html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PetalPost - Time Capsule Modal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+            extend: {
+                colors: {
+                    "primary": "#ee2b5b",
+                    "primary-light": "#ffedf2", 
+                    "background-light": "#ffffff", 
+                    "background-dark": "#221015",
+                    "surface-light": "#f8f6f6",
+                    "surface-dark": "#361a22",
+                },
+                fontFamily: {
+                    "display": ["Plus Jakarta Sans", "sans-serif"]
+                },
+                borderRadius: {
+                    "DEFAULT": "1rem", 
+                    "lg": "1.5rem", 
+                    "xl": "2rem", 
+                    "2xl": "2.5rem",
+                    "3xl": "3rem",
+                    "full": "9999px"
+                },
+            },
+            },
+        }
+    </script>
+<style>
+        /* Custom Shimmer Effect */
+        @keyframes shimmer {
+            0% { transform: translateX(-150%) skewX(-15deg); }
+            50%, 100% { transform: translateX(150%) skewX(-15deg); }
+        }
+        .animate-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .animate-shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.6) 50%, transparent 100%);
+            transform: skewX(-15deg);
+            animation: shimmer 3s infinite;
+        }
+
+        /* iOS-style Date Picker Scroll Hide */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-gray-400 font-display flex items-end justify-center min-h-screen">
+<!-- Mock Background App UI (Blurred behind modal) -->
+<div aria-hidden="true" class="fixed inset-0 w-full h-full bg-black/40 z-0 backdrop-blur-sm"></div>
+<!-- Bottom Sheet Modal Container -->
+<div class="relative w-full max-w-md bg-background-light dark:bg-background-dark rounded-t-3xl shadow-2xl z-10 transform transition-transform duration-300 ease-out translate-y-0 overflow-hidden flex flex-col max-h-[90vh]">
+<!-- BottomSheetHandle -->
+<div class="flex flex-col items-center pt-4 pb-2 shrink-0">
+<div class="h-1.5 w-12 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+</div>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto no-scrollbar px-6 pb-6 pt-2">
+<!-- Header Section -->
+<div class="text-center mb-8">
+<h2 class="text-gray-900 dark:text-white text-2xl font-bold leading-tight tracking-tight mb-2">
+                    Lock this note
+                </h2>
+<p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-relaxed px-4">
+                    They can only open it after the time you choose.
+                </p>
+</div>
+<!-- Locked Note Preview Card -->
+<div class="relative mb-8 group">
+<div class="absolute inset-0 bg-primary/5 blur-xl rounded-full transform translate-y-4 opacity-50"></div>
+<div class="relative bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-white/5 rounded-2xl p-4 overflow-hidden shadow-sm">
+<div class="flex flex-col items-center justify-center py-6 gap-4">
+<!-- Icon with Shimmer -->
+<div class="relative h-16 w-16 bg-primary/10 rounded-full flex items-center justify-center animate-shimmer overflow-hidden">
+<span class="material-symbols-outlined text-primary text-3xl font-variation-FILL">lock_clock</span>
+</div>
+<div class="text-center">
+<h3 class="text-primary font-bold text-lg mb-1">Locked until moment arrives</h3>
+<p class="text-gray-600 dark:text-gray-300 text-sm font-medium bg-white dark:bg-white/5 px-3 py-1 rounded-full inline-block shadow-sm border border-gray-100 dark:border-white/5">
+                                Opens on Oct 24, 8:00 PM
+                            </p>
+</div>
+</div>
+<!-- Decorative background pattern inside card -->
+<div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style="background-image: radial-gradient(#ee2b5b 1px, transparent 1px); background-size: 16px 16px;">
+</div>
+</div>
+</div>
+<!-- iOS Style Date/Time Picker Simulation -->
+<div class="mb-8">
+<div class="flex justify-between items-center mb-4 px-1">
+<span class="text-gray-900 dark:text-white font-semibold text-sm uppercase tracking-wide">Unlock Date</span>
+</div>
+<div class="flex gap-3 h-48 relative overflow-hidden">
+<!-- Selection Indicator Bar -->
+<div class="absolute top-1/2 left-0 right-0 h-12 -translate-y-1/2 bg-gray-100 dark:bg-white/5 rounded-xl pointer-events-none z-0"></div>
+<!-- Month/Day Column -->
+<div class="flex-1 text-center relative z-10 no-scrollbar overflow-y-scroll snap-y snap-mandatory py-[calc(6rem-1.5rem)] mask-gradient">
+<div class="space-y-0 text-lg font-medium text-gray-400">
+<div class="h-12 flex items-center justify-center snap-center">Oct 22</div>
+<div class="h-12 flex items-center justify-center snap-center">Oct 23</div>
+<div class="h-12 flex items-center justify-center snap-center text-gray-900 dark:text-white font-bold scale-110 transition-transform">Oct 24</div>
+<div class="h-12 flex items-center justify-center snap-center">Oct 25</div>
+<div class="h-12 flex items-center justify-center snap-center">Oct 26</div>
+</div>
+</div>
+<!-- Hour Column -->
+<div class="w-20 text-center relative z-10 no-scrollbar overflow-y-scroll snap-y snap-mandatory py-[calc(6rem-1.5rem)]">
+<div class="space-y-0 text-lg font-medium text-gray-400">
+<div class="h-12 flex items-center justify-center snap-center">6</div>
+<div class="h-12 flex items-center justify-center snap-center">7</div>
+<div class="h-12 flex items-center justify-center snap-center text-gray-900 dark:text-white font-bold scale-110 transition-transform">8</div>
+<div class="h-12 flex items-center justify-center snap-center">9</div>
+<div class="h-12 flex items-center justify-center snap-center">10</div>
+</div>
+</div>
+<!-- Minute Column -->
+<div class="w-20 text-center relative z-10 no-scrollbar overflow-y-scroll snap-y snap-mandatory py-[calc(6rem-1.5rem)]">
+<div class="space-y-0 text-lg font-medium text-gray-400">
+<div class="h-12 flex items-center justify-center snap-center">58</div>
+<div class="h-12 flex items-center justify-center snap-center">59</div>
+<div class="h-12 flex items-center justify-center snap-center text-gray-900 dark:text-white font-bold scale-110 transition-transform">00</div>
+<div class="h-12 flex items-center justify-center snap-center">01</div>
+<div class="h-12 flex items-center justify-center snap-center">02</div>
+</div>
+</div>
+<!-- AM/PM Column -->
+<div class="w-16 text-center relative z-10 no-scrollbar overflow-y-scroll snap-y snap-mandatory py-[calc(6rem-1.5rem)]">
+<div class="space-y-0 text-lg font-medium text-gray-400">
+<div class="h-12 flex items-center justify-center snap-center">AM</div>
+<div class="h-12 flex items-center justify-center snap-center text-gray-900 dark:text-white font-bold scale-110 transition-transform">PM</div>
+<div class="h-12 flex items-center justify-center snap-center opacity-0">AM</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="flex flex-col gap-3">
+<button class="w-full bg-primary hover:bg-red-600 active:scale-[0.98] transition-all h-14 rounded-full flex items-center justify-center gap-2 group/btn shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-white text-xl">lock</span>
+<span class="text-white text-lg font-bold">Lock it</span>
+</button>
+<button class="w-full bg-transparent hover:bg-gray-100 dark:hover:bg-white/5 active:scale-[0.98] transition-all h-12 rounded-full flex items-center justify-center">
+<span class="text-gray-500 dark:text-gray-400 text-base font-semibold">Cancel</span>
+</button>
+</div>
+</div>
+<!-- Safe Area for Bottom Navigation/Home Bar on iOS -->
+<div class="h-6 w-full bg-transparent shrink-0"></div>
+</div>
+</body></html>

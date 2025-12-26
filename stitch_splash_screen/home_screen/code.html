@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PetalPost Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+            extend: {
+                colors: {
+                "primary": "#ee2b5b",
+                "background-light": "#f8f6f6",
+                "background-dark": "#221015",
+                "surface-light": "#ffffff",
+                "surface-dark": "#2f151b",
+                },
+                fontFamily: {
+                "display": ["Plus Jakarta Sans", "sans-serif"]
+                },
+                borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                boxShadow: {
+                    "soft": "0 4px 20px -2px rgba(238, 43, 91, 0.08)",
+                    "card": "0 2px 10px rgba(0, 0, 0, 0.03)",
+                }
+            },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white antialiased transition-colors duration-300">
+<div class="relative min-h-screen w-full mx-auto max-w-md bg-background-light dark:bg-background-dark overflow-hidden flex flex-col">
+<!-- Header / Top Bar -->
+<header class="flex items-center justify-between px-5 pt-6 pb-2 sticky top-0 z-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<!-- Space Switcher Chip -->
+<button class="group flex h-10 items-center gap-x-2 rounded-full bg-white dark:bg-surface-dark pl-1 pr-4 shadow-card border border-transparent active:scale-95 transition-all">
+<div class="h-8 w-8 rounded-full bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center">
+<div class="bg-center bg-cover h-full w-full rounded-full" data-alt="Profile picture of couple smiling" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDclG-ga7QJMesmQeDpyL-3RW1aMrKXB1C-fbR_IBXA0zyALQRlusHFjS88f4Pe_XoP4UdrEU-wjuTanqa6qCmmZv5XLpYO-3fDbVVhYmcAOPXT5fzVNEJ0AZ5d99FSTTXN2op_yvQ-_rtgKl_u4E9vaC2zxU30D3B24Aom3JFWOcRmjpmcKf35hhYLLNHEx7wTQyf2m3xU4q_2VxJy_TPfJa2jgB9xF6YBj6_7s5zrA77PK-1eE9TmSZiWcjpPgOe5dJlBOO-zQvY');"></div>
+</div>
+<span class="text-sm font-bold text-gray-800 dark:text-gray-100 group-hover:text-primary transition-colors">Alex &amp; Sam</span>
+<span class="material-symbols-outlined text-gray-400 text-[20px]">expand_more</span>
+</button>
+<!-- Points Pill -->
+<div class="flex h-9 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-surface-dark pl-3 pr-3 shadow-card border border-transparent">
+<span class="text-primary font-bold text-sm">350</span>
+<span class="text-lg leading-none">🌸</span>
+</div>
+</header>
+<!-- Main Content (Scrollable) -->
+<main class="flex-1 overflow-y-auto hide-scrollbar pb-32">
+<!-- Hero Section -->
+<section class="mt-4 px-5">
+<div class="flex items-end justify-between mb-4">
+<h2 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Latest from Alex</h2>
+<span class="text-xs font-medium text-gray-400 dark:text-gray-500 mb-1">2h ago</span>
+</div>
+<!-- Hero Card: Surprise State -->
+<div class="group relative w-full overflow-hidden rounded-[2rem] bg-white dark:bg-surface-dark shadow-soft transition-transform duration-500 hover:scale-[1.01] active:scale-[0.98] cursor-pointer">
+<!-- Image Background with Glassmorphism Overlay -->
+<div class="aspect-[4/3] w-full relative">
+<!-- Actual Image (Blurred) -->
+<div class="absolute inset-0 bg-cover bg-center transition-all duration-700 blur-xl group-hover:blur-md" data-alt="Blurred surprise dinner table setting with candles" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDh_jvX23CFqoZB0mloI4J6Aari2StVTKWm2JsCn9N0Z0KX2FhaLpgr5Lx-UbFiuEh62mSx2Keh_9QwOGidOAjAKprnov_gqYH7p8tn6hHh7BUewEEKjLwgiBM9g5aIOMCBIdXYAu1RvfDWunSehYO7UQNPO7MRESO7f1uUNdYWSfm5q6z_d6GrK8aXIeydZQJNfd8zeo8HhcQnCsE8JzxjIrdrc4MCghgoZNjnkAlS2eYOuiIu5tA3EaLtwXu1ikSabEqCRxbozxI');">
+</div>
+<!-- Overlay Tint -->
+<div class="absolute inset-0 bg-white/30 dark:bg-black/40"></div>
+<!-- Reveal Trigger UI -->
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-10">
+<div class="h-16 w-16 rounded-full bg-white/20 dark:bg-black/30 backdrop-blur-md flex items-center justify-center mb-4 border border-white/40 shadow-lg animate-pulse">
+<span class="material-symbols-outlined text-white text-[32px]">redeem</span>
+</div>
+<h3 class="text-xl font-bold text-white drop-shadow-md mb-1">Surprise Note ✨</h3>
+<p class="text-white/90 font-medium text-sm drop-shadow-md">Tap to reveal what's inside</p>
+</div>
+</div>
+<!-- Card Footer -->
+<div class="p-5 flex items-center justify-between border-t border-gray-100 dark:border-white/5 bg-white dark:bg-surface-dark relative z-20">
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<div class="h-8 w-8 rounded-full border-2 border-white dark:border-surface-dark bg-gray-200 bg-cover bg-center" data-alt="Partner profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDGLMGkCKo1M8CqgpoppjxNdmtRZzwgLd89DLWmjolfgBnVQzHjpXRb--0YtlX8RWe4rr9wfXjfsVapJ-HiAVmEH0LVptqfqur7jXh-Y0WlHO-qGczBio0S-8fPQp6KclvOkiMbVFs74K1Zwr8BIPeqC64ZiQcywW2cHHhKsooobOHn6Oo-vBXkhc0SKt-K2MdU6Hy9c9vgYpY-PWWoun86SJ00CXj6_8tImKng_AaJ50f4odTwwPYKPbSI0Q8UG8OBhwgN7ktdDM8');"></div>
+<div class="h-8 w-8 rounded-full border-2 border-white dark:border-surface-dark bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[14px]">favorite</span>
+</div>
+</div>
+<p class="text-sm font-medium text-gray-500 dark:text-gray-400">Sent with love</p>
+</div>
+<button class="text-primary hover:bg-primary/10 rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="mt-8 px-5">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 px-1">Today</h3>
+<div class="flex flex-col gap-4">
+<!-- Timeline Item: Voice Note -->
+<div class="flex items-center gap-4 bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-card active:scale-[0.99] transition-transform cursor-pointer">
+<div class="h-12 w-12 shrink-0 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">mic</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-1">
+<p class="text-sm font-bold text-gray-900 dark:text-white truncate">Morning Greeting ☀️</p>
+<span class="text-xs text-gray-400">9:41 AM</span>
+</div>
+<div class="flex items-center gap-2">
+<!-- Fake waveform -->
+<div class="flex items-center gap-[2px] h-4">
+<div class="w-1 h-2 bg-primary rounded-full"></div>
+<div class="w-1 h-3 bg-primary rounded-full"></div>
+<div class="w-1 h-4 bg-primary/60 rounded-full"></div>
+<div class="w-1 h-2 bg-primary/40 rounded-full"></div>
+<div class="w-1 h-3 bg-primary/30 rounded-full"></div>
+</div>
+<span class="text-xs font-medium text-gray-500">0:14</span>
+</div>
+</div>
+<div class="h-2 w-2 rounded-full bg-primary"></div> <!-- Unread indicator -->
+</div>
+<!-- Timeline Item: Simple Text -->
+<div class="flex items-start gap-4 bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-card active:scale-[0.99] transition-transform cursor-pointer">
+<div class="h-12 w-12 shrink-0 rounded-full bg-pink-100 dark:bg-pink-900/20 flex items-center justify-center text-pink-600 dark:text-pink-400">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-1">
+<p class="text-sm font-bold text-gray-900 dark:text-white truncate">Dinner Plans?</p>
+<span class="text-xs text-gray-400">11:20 AM</span>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2 leading-relaxed">
+                                I was thinking we could try that new Italian place downtown tonight... 🍝
+                            </p>
+</div>
+</div>
+</div>
+<!-- Spacer -->
+<div class="h-8"></div>
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 px-1">Earlier</h3>
+<!-- Timeline Item: Time Capsule (Locked) -->
+<div class="flex items-center gap-4 bg-white dark:bg-surface-dark p-4 rounded-2xl shadow-card opacity-80 hover:opacity-100 transition-opacity">
+<div class="h-12 w-12 shrink-0 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-400">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-1">
+<p class="text-sm font-bold text-gray-600 dark:text-gray-300 truncate">Time Capsule</p>
+<span class="text-xs text-gray-400">Yesterday</span>
+</div>
+<div class="inline-flex items-center gap-1.5 rounded-md bg-gray-100 dark:bg-gray-800 px-2 py-1">
+<span class="material-symbols-outlined text-[14px] text-gray-500">schedule</span>
+<span class="text-xs font-medium text-gray-500">Opens Friday</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation & FAB -->
+<div class="fixed bottom-0 w-full max-w-md bg-transparent z-50 pointer-events-none">
+<!-- FAB Container - absolutely positioned centered above the bar -->
+<div class="absolute bottom-[4.5rem] left-1/2 transform -translate-x-1/2 pointer-events-auto z-50">
+<button class="h-16 w-16 rounded-full bg-primary shadow-[0_8px_25px_-5px_rgba(238,43,91,0.5)] flex items-center justify-center text-white transition-transform hover:scale-105 active:scale-95 group">
+<span class="material-symbols-outlined text-[32px] group-hover:rotate-90 transition-transform duration-300">add</span>
+</button>
+</div>
+<!-- Nav Bar Background -->
+<nav class="relative bg-white dark:bg-surface-dark border-t border-gray-100 dark:border-white/5 pb-8 pt-2 px-6 flex justify-between items-center shadow-[0_-5px_20px_rgba(0,0,0,0.03)] pointer-events-auto rounded-t-[2rem]">
+<!-- Left Tabs -->
+<div class="flex gap-8">
+<button class="flex flex-col items-center gap-1 p-2 text-primary">
+<span class="material-symbols-outlined fill-current">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-[10px] font-medium">Memories</span>
+</button>
+</div>
+<!-- Spacer for FAB -->
+<div class="w-12"></div>
+<!-- Right Tabs -->
+<div class="flex gap-8">
+<button class="flex flex-col items-center gap-1 p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
+<span class="material-symbols-outlined">local_activity</span> <!-- Ticket/Rewards icon -->
+<span class="text-[10px] font-medium">Rewards</span>
+</button>
+<button class="flex flex-col items-center gap-1 p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</button>
+</div>
+</nav>
+</div>
+</div>
+</body></html>
